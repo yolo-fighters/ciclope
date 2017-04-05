@@ -9,40 +9,69 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/administrador.css">
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
     <header>
-    	
+    	<nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="#">Ciclope</a>
+                </div>
+                <div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li id="inicio"><a href="#section1" >Inicio</a></li>
+                            <li id="concursos"><a href="#section2" >Concursos</a></li>
+                            <li id="empresa"><a href="#section3">Empresa</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>  
     </header>
-    <section id="concursos" class="visible">
+    <section id="btn-inicio" class="visible">
     	<div class="content">
     		<div class="container">
-    				<h1>concursos</h1>
+    				<h1>inicio</h1>
     		</div>
     	</div> 
     </section>
-    <section id="añadirConcurso">
+    <section id="btn-concurso">
     	<div class="content">
     		<div class="container">
-    				<h1>Añadir concursos </h1>
+    				<h1>concurso</h1>
+    				<button id="anadirConcurso">click</button>
     		</div>
     	</div> 
     </section>
-    <section id="empresa">
+    <section id="btn-anadirConcurso">
+    	<div class="content">
+    		<div class="container">
+    				<h1>Añadir concursos  </h1>
+    		</div>
+    	</div> 
+    </section>
+    <section id="btn-empresa">
     	<div class="content">
     		<div class="container">
     				<h1>Empresa </h1>
+    				<button id="anadirEmpresa">click</button>
     		</div>
     	</div> 
     </section>
-    <section id="añadirEmpresa">
+    <section id="btn-anadirEmpresa">
     	<div class="content">
     		<div class="container">
     				<h1>Añadir Empresa </h1>
     		</div>
     	</div> 
     </section>
-    <script src="js/administrador.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/administrador.js"></script>
 </body>
 </html>

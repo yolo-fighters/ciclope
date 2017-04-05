@@ -1,0 +1,29 @@
+header .navbar-brand {
+    margin-top: 8px;
+}
+header .navbar-nav>li>a {
+    padding-top: 23px;  
+    padding-bottom: 23px;   
+}
+
+header {
+  position: relative;
+  z-index: 100; }
+
+section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  opacity: 0.8; }
+
+.visible {
+  opacity: 1;
+  display: table; }
+
+.content {
+  background: #fff;
+  display: table-cell;
+  vertical-align: middle; }

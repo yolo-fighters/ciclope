@@ -4,18 +4,34 @@ var currentSection = null;
 
 function init()
 {
-	currentSection = $('');
-	$('').click(onClickConcurso);
-	$('').click(onClickAnadirConcurso);
-	$('').click(onClickEmpresa);
-	$('').click(onClickAñadirEmpresa);
-	$('').click(onClickInicio);
+	currentSection = $('.visible');
+	$('#inicio').click(onClickInicio);
+	$('#concursos').click(onClickConcurso);
+	$('#anadirConcurso').click(onClickAnadirConcurso);
+	$('#empresa').click(onClickEmpresa);
+	$('#anadirEmpresa').click(onClickAnadirEmpresa);
+	$('#inicio').click(onClickInicio);
     
 }
 
-function onClickHome(){
-    
-	gotoSection('');
+function onClickInicio(){
+    gotoSection('btn-inicio');
+}
+
+function onClickConcurso(){
+	gotoSection('btn-concurso');
+}
+
+function onClickAnadirConcurso(){
+	gotoSection('btn-anadirConcurso');
+}
+
+function onClickEmpresa(){
+	gotoSection('btn-empresa');
+}
+
+function onClickAnadirEmpresa(){
+	gotoSection('btn-anadirEmpresa');
 }
 
 function gotoSection(_identificador)
