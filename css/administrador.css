@@ -20,10 +20,9 @@ section {
   display: table-cell;
   vertical-align: middle; }
 
-header .navbar-brand {
+header navbar-brand {
   margin-top: 8px; }
-
-header .navbar-nav > li > a {
+header navbar-nav > li > a {
   padding-top: 23px;
   padding-bottom: 23px; }
 

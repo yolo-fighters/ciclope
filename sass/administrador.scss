@@ -18,13 +18,15 @@ section {
 .content {
   background: #fff;
   display: table-cell;
-  vertical-align: middle; }
-header .navbar-brand {
-    margin-top: 8px;
+  vertical-align: middle; 
 }
-header .navbar-nav>li>a {
-    padding-top: 23px;  
-    padding-bottom: 23px;   
+header {
+	navbar-brand {
+   		margin-top: 8px;
+    }
+	navbar-nav>li>a {
+    	padding-top: 23px;  
+    	padding-bottom: 23px;   
+	}
 }
-
 @import "empresa";
