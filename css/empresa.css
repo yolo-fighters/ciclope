@@ -1,0 +1,26 @@
+/*-------------estilos--generales---------*/
+*{
+    outline: 1px solid  #0000ff;
+}
+img{
+    width: 100%;
+}
+.cajaScaneo{
+    width:30%;
+    height:200px;
+}
+.img-circle{
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #000000;
+}
+section{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.visible{
+    display:block;
+}
