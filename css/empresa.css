@@ -1,13 +1,27 @@
 /*-------------estilos--generales---------*/
-*{
-    outline: 1px solid  #0000ff;
+section{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
 }
 img{
     width: 100%;
 }
-.cajaScaneo{
-    width:30%;
-    height:200px;
+.visible{
+    display:block;
+}
+
+/*-------------------estilos---header menu-------*/
+.navbar-default .navbar-nav li a{
+    color: white;
+}
+.navbar-default{
+    background: #1a1919;
+}
+/*-------------------estilos---primera secion-------*/
+.img-responsive{
+    height: 250px;
 }
 .img-circle{
     width: 40%;
@@ -15,12 +29,8 @@ img{
     padding: 20px;
     border: 1px solid #000000;
 }
-section{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: none;
-}
-.visible{
-    display:block;
+/*-------------------estilos---segunda--secion--------*/
+#sectionScanea img {
+    width:30%;
+    
 }
