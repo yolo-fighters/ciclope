@@ -7,9 +7,11 @@
     <title>Ciclope</title>
     <link rel="icon" type="image/ico" href="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/participante.css">
+    <link rel="stylesheet" href="css/queries.css">
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<body onload="init()" data-spy="scroll" data-target=".navbar" data-offset="50">
 <!-- --------------------------------------------------------------------------------- MENU FIJO ------------------>
     <header>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -25,75 +27,97 @@
                 <div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a href="#section1">Inicio</a></li>
-                            <li><a href="#section2">Resultados</a></li>
-                            <li><a href="#section3">Contacto</a></li>
+                            <li><a href="" id="a-inicio">Inicio</a></li>
+                            <li><a id="a-results">Resultados</a></li>
+                            <li><a id="a-contact">Contacto</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </nav>  
     </header>
+    
 <!-- ------------------------------------------------------------------------------- MENU INICIO ------------------>
     <section id="inicio">
         <div class="container">
-            <div class="row">
-                <ul class="list-type">
-                    <li>Todo</li><li>Comida</li><li>Hospedaje</li><li>Cosas</li>
-                </ul>
-            </div>
+            <ul class="list-type">
+                <li>Todo</li><li>Comida</li><li>Hospedaje</li><li>Cosas</li>
+            </ul>
         </div>
     </section> 
    
-   
 <!-- ----------------------------------------------------------------------------- LISTA SORTEOS ------------------>
-    <section id="sorteo">
+    <section id="sorteo" style="display:none;">
         <div class="container">
-            <div class="row">
-                <ul class="list-sorteo">
-                    <li>
-                        <img class="elemento" src="img/ceviche.jpg" alt="">
-                        <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                        <p class="nombre-elemento">Nombre del plato</p>
-                        <div class="puntos"><i class="glyphicon glyphicon-plus add-pto"></i></div>
-                    </li>
-                    <li>
-                        <img class="elemento" src="img/ceviche.jpg" alt="">
-                        <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                        <p class="nombre-elemento">Nombre del plato</p>
-                        <div class="puntos"><i class="glyphicon glyphicon-plus add-pto"></i></div>
-                    </li>
-                    <li>
-                        <img class="elemento" src="img/ceviche.jpg" alt="">
-                        <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                        <p class="nombre-elemento">Nombre del plato</p>
-                        <div class="puntos"><i class="glyphicon glyphicon-plus add-pto"></i></div>
-                    </li>
-                    <li>
-                        <img class="elemento" src="img/ceviche.jpg" alt="">
-                        <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                        <p class="nombre-elemento">Nombre del plato</p>
-                        <div class="puntos"><i class="glyphicon glyphicon-plus add-pto"></i></div>
-                    </li>
-                    <li>
-                        <img class="elemento" src="img/ceviche.jpg" alt="">
-                        <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                        <p class="nombre-elemento">Nombre del plato</p>
-                        <div class="puntos"><i class="glyphicon glyphicon-plus add-pto"></i></div>
-                    </li>
-                    <li>
-                        <img class="elemento" src="img/ceviche.jpg" alt="">
-                        <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                        <p class="nombre-elemento">Nombre del plato</p>
-                        <div class="puntos"><i class="glyphicon glyphicon-plus add-pto"></i></div>
-                    </li>
-                </ul>
-            </div>
+            <ul class="list-sorteo">
+                <li>
+                    <img class="elemento" src="img/ceviche.jpg" alt="">
+                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
+                    <p class="nombre-elemento">Nombre del plato</p>
+                    <p class="glyphicon-plus add-pto"></p>
+                </li>
+                <li>
+                    <img class="elemento" src="img/ceviche.jpg" alt="">
+                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
+                    <p class="nombre-elemento">Nombre del plato</p>
+                    <p class="glyphicon-plus add-pto"></p>
+                </li>
+                <li>
+                    <img class="elemento" src="img/ceviche.jpg" alt="">
+                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
+                    <p class="nombre-elemento">Nombre del plato</p>
+                    <p class="glyphicon-plus add-pto"></p>
+                </li>
+                <li>
+                    <img class="elemento" src="img/ceviche.jpg" alt="">
+                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
+                    <p class="nombre-elemento">Nombre del plato</p>
+                    <p class="glyphicon-plus add-pto"></p>
+                </li>
+                <li>
+                    <img class="elemento" src="img/ceviche.jpg" alt="">
+                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
+                    <p class="nombre-elemento">Nombre del plato</p>
+                    <p class="glyphicon-plus add-pto"></p>
+                </li>
+                <li>
+                    <img class="elemento" src="img/ceviche.jpg" alt="">
+                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
+                    <p class="nombre-elemento">Nombre del plato</p>
+                    <p class="glyphicon-plus add-pto"></p>
+                </li>
+            </ul>
         </div>
     </section>
-<!-- ------------------------------------------------------------------------------- MENU INICIO ------------------>
-    <script src="js/participante.js"></script>
+    
+<!-- -------------------------------------------------------------------------------- RESULTADOS ------------------>
+    <div ng-app="Myapp" ng-controller="MainController">
+       <section id="resultados">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h1>Resultados del 31 de Marzo del 2017</h1>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" id="datepicker"><i class="i-calendar glyphicon glyphicon-calendar"></i>
+                    </div>
+                </div>
+            </div>
+            <button id="btn-a" ng-click="getConcursos()">enviar</button>
+            <input type="text" ng-model="test">
+        </section>
+    </div>
+    
+    
+    
+    
+<!-- --------------------------------------------------------------------------------- CONTACTOS ------------------>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/participante.js"></script>
 </body>
 </html>

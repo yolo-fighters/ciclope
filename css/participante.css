@@ -1,11 +1,11 @@
 /*------------------------------------------------------------------------- ESTILOS GENERALES ------------------ */
-* {
-  outline: 1px solid rgba(255, 0, 0, 0.4); }
-
 body {
   box-sizing: border-box; }
 
 /*--------------------------------------------------------------------------------- MENU FIJO ------------------ */
+header {
+  margin-bottom: 70px; }
+
 header .navbar-brand {
   margin-top: 8px; }
 
@@ -14,9 +14,6 @@ header .navbar-nav > li > a {
   padding-bottom: 23px; }
 
 /*------------------------------------------------------------------------------- MENU INICIO ------------------ */
-#inicio {
-  margin-top: 66px; }
-
 #inicio .list-type, .list-sorteo {
   list-style: none;
   padding: 0;
@@ -29,16 +26,52 @@ header .navbar-nav > li > a {
 
 /*----------------------------------------------------------------------------- LISTA SORTEOS ------------------ */
 #sorteo .list-sorteo li {
-  width: 33%;
-  position: relative; }
+  width: 31%;
+  position: relative;
+  margin: 1%; }
+  #sorteo .list-sorteo li .elemento {
+    width: 100%; }
+  #sorteo .list-sorteo li .logo-empresa {
+    position: absolute;
+    color: #fff;
+    width: 100px;
+    top: 5px;
+    left: 5px; }
+  #sorteo .list-sorteo li .nombre-elemento {
+    position: absolute;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.51);
+    padding: 5px;
+    display: inline-block;
+    bottom: 0;
+    left: 0;
+    font-size: 18px; }
+  #sorteo .list-sorteo li .add-pto {
+    position: absolute;
+    color: #fff;
+    background: #c34143;
+    border-radius: 100%;
+    padding: 15px;
+    display: inline-block;
+    bottom: 0;
+    right: 10px;
+    line-height: 1;
+    font-size: 15px;
+    font-family: 'Glyphicons Halflings'; }
 
-#sorteo .list-sorteo li .elemento {
-  width: 100%; }
+/*-------------------------------------------------------------------------------- RESULTADOS ------------------ */
+.datepicker.dropdown-menu {
+  top: 122px !important; }
 
-#sorteo .list-sorteo li .logo-empresa {
-  width: 100px;
-  position: absolute;
-  top: 0;
-  left: 0; }
+#resultados {
+  padding: 15px 0; }
+  #resultados h1 {
+    display: inline-block;
+    margin: 0; }
+  #resultados .input-group .form-control {
+    height: 40px; }
+  #resultados .i-calendar {
+    font-size: 28px;
+    color: #c34143; }
 
 /*# sourceMappingURL=participante.css.map */
