@@ -1,3 +1,31 @@
+var app = angular.module("MyApp", []);
+
+app.controller("controllerEmpresas", function($scope, $http) {
+	$scope.listaEmpresas = [];
+	$scope.getEmpresas = function() {
+		$http.get("http://192.168.0.132:3000/api/todasEmpresas").then(function(response) {
+			for (var index = 0; index < response.data.result.length; index++) {
+				$scope.listaEmpresas.push(response.data.result[index]);		
+			}
+			$scope.$apply;
+		})
+	}
+	$scope.addEmpresa = function() {
+		$scope.listaEmpresas.push({nombre: "test"});
+		console.log($scope.listaEmpresas);
+		$scope.$apply;
+	}
+	$scope.getEmpresas();
+});
+
+
+
+
+
+
+
+
+
 $(document).ready(init);
 
 var currentSection = null;
