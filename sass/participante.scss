@@ -1,44 +1,62 @@
 /*------------------------------------------------------------------------- ESTILOS GENERALES ------------------ */
 * {
-  outline: 1px solid rgba(255, 0, 0, 0.4); }
-
-body {
-  box-sizing: border-box; }
+    outline: 1px solid rgba(255, 0, 0, 0.4);
+}
+body{
+    box-sizing: border-box;
+}
 
 /*--------------------------------------------------------------------------------- MENU FIJO ------------------ */
+header {
+    
+}
 header .navbar-brand {
-  margin-top: 8px; }
-
-header .navbar-nav > li > a {
-  padding-top: 23px;
-  padding-bottom: 23px; }
+    margin-top: 8px;
+}
+header .navbar-nav>li>a {
+    padding-top: 23px;   
+    padding-bottom: 23px;   
+}
 
 /*------------------------------------------------------------------------------- MENU INICIO ------------------ */
 #inicio {
-  margin-top: 66px; }
-
+    margin-top: 66px;
+}
 #inicio .list-type, .list-sorteo {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0; }
-
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
 #inicio .list-type li, .list-sorteo li {
-  display: inline-block;
-  width: 25%;
-  text-align: center; }
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+}
 
 /*----------------------------------------------------------------------------- LISTA SORTEOS ------------------ */
+#sorteo {
+    
+}
 #sorteo .list-sorteo li {
-  width: 33%;
-  position: relative; }
-
+    width: 33%;
+    position: relative;
+}
 #sorteo .list-sorteo li .elemento {
-  width: 100%; }
-
+    width: 100%;
+}
 #sorteo .list-sorteo li .logo-empresa {
-  width: 100px;
-  position: absolute;
-  top: 0;
-  left: 0; }
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#sorteo .list-sorteo li .nombre-elemento {
+    
+}
 
-/*# sourceMappingURL=participante.css.map */
+#sorteo .list-sorteo li {
+    
+}
+
+
+
