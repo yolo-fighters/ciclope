@@ -1,7 +1,7 @@
 var app = angular.module("MyApp", []);
 
 app.controller("controllerEmpresas", function($scope, $http) {
-	$scope.domain = "http://192.168.0.137:3000";
+	$scope.domain = "http://192.168.0.132:3000";
 	$scope.listaEmpresas = [];
 	$scope.getEmpresas = function() {
 		var url = $scope.domain + "/api/todasEmpresas"; $http.get(url).then(function(response) {
@@ -14,16 +14,20 @@ app.controller("controllerEmpresas", function($scope, $http) {
 	$scope.addEmpresa = function() {
 		var url = $scope.domain + "/api/createEmpresa";
 		var data = {
-			nombre: $scope.nombeEmpresa,
+			nombre: $scope.nombreEmpresa,
 			contacto: $scope.contacto,
 			ruc: "12312323",
-			geopos: {latitude: "123123", longitude: "asdad"}
+			latitude: "123123",
+			longitude: "asdad"
 		}
 		$http.post(url, data).then(function(response) {
-			console.log(response)
+			alert("Empresa creada con Exito!");
+			$scope.listaEmpresas.push(response.data.result);
+			$scope.$apply;
 		})
 	}
 	$scope.getEmpresas();
+	
 });
 
 
@@ -38,6 +42,8 @@ function init()
 	$('#anadirConcurso').click(onClickAnadirConcurso);
 	$('#empresa').click(onClickEmpresa);
 	$('#anadirEmpresa').click(onClickAnadirEmpresa);
+	$('#regresar').click(onClickRegresar);
+	$('#anadirUsuarios').click(onClickUsuario);
 	initMap();
 	
 }
@@ -85,6 +91,12 @@ function onClickAnadirEmpresa(){
 	
 }
 
+function onClickRegresar(){
+	gotoSection('btn-empresa');
+}
+function onClickUsuario(){
+	gotoSection('btn-empresa');
+}
 //name
 function validateM(_evt){
     var name = document.getElementById("r-name").value;

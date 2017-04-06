@@ -10,7 +10,8 @@
   right: 0;
   padding: 0;
   margin: 0;
-  border-width: 0; }
+  border-width: 0; 
+}
 
 header {
   position: relative;
@@ -43,5 +44,11 @@ header {
     	padding-bottom: 23px;   
 	}
 
+}
+
+.glyphicon-plus-sign{
+	font-size: 180%;
+	background: rgba(188, 154, 187, 0.89);
+	border-radius: 1000px;
 }
 @import "empresa";

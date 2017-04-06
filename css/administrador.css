@@ -40,6 +40,11 @@ header navbar-nav > li > a {
   padding-top: 23px;
   padding-bottom: 23px; }
 
+.glyphicon-plus-sign {
+  font-size: 180%;
+  background: rgba(188, 154, 187, 0.89);
+  border-radius: 1000px; }
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
