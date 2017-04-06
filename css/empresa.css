@@ -1,0 +1,145 @@
+/*-------------estilos--generales---------*/
+section{
+    position: absolute;
+    width: 100%;
+    height: 82%;
+    display: none;
+}
+.visible{
+    display:block;
+}
+img{
+    width:100%;
+}
+/*-------------------estilos---header-----------menu-------*/
+.navbar-default .navbar-nav li a{
+    color: white;
+    padding: 30px;
+}
+.navbar-default{
+    background: #1a1919;
+}
+.navbar-default input{
+    margin:30px;
+}
+/*-------------------ESTILOS--------SECCION------CLIENENTES--------*/
+.border{
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    margin-top: 10%;
+}
+.img-responsive{
+    width:100%;
+    height:200px;
+}
+.img-circle{
+    width: 40%;
+    margin: auto;
+    padding: 14%;
+    border: 2px solid #000000;
+    text-align: center;
+}
+
+/*-----------------SECTION--DE----COSAS---GRATIS--------*/
+.letra{
+    font-size: 30px;
+    font-weight: bold;
+}
+.col-md-2 input{
+    margin:0;
+    width:10%;
+    
+}
+.col-md-2 p{
+    font-size:15px;
+    font-weight: bold;
+}
+/*--------------------ESTILOS DE LA SECTION ESCANEO---------*/
+#sectionScanea img {
+    width:40%;
+    height: 300px;
+}
+#sectionScanea {
+    font-weight: bold;
+}
+.numero{
+    width:40%;
+    height: 50px;
+    text-align:center;
+}
+
+/*-------SECION---FELIZIDADES-GANASTE--PREMIO-----------------*/
+#premio img{
+    width:50%;
+}
+#premio h3{
+    float:left;
+}
+.flecha{
+   font-size:30px; 
+}
+/*-------SECTION----NO------GANASTE-----------------*/
+#perdiste{
+    text-align:center;
+}
+#perdiste img {
+    width:30%;
+    height: auto;
+}
+.regreso{
+    font-size:20px;
+} 
+.regreso .flecha{
+    margin-top:30px ;
+}
+.regreso i{
+    font-size: 40px;
+    font-weight:bolder;
+}
+
+
+/*----------------------MEDIA--QUERIES------------*/
+@media (max-width:764px) and (min-width:319px){
+    
+    .navbar-default input{
+        display: none;
+    }
+    .border{
+        border: none;
+    }
+    #fechaMes{
+        position: absolute;
+        font-size: 25px;
+    }
+    .fa-calendar{
+        position: absolute;
+        top: 3px;
+        left: 57px;
+    }
+    .letra h2{
+        font-size: 20px;
+    }
+    .col-md-2 p{
+        font-size: 17px;
+    }
+    .numero{
+        width:100%;
+    }
+    /*---RESPONSI----ESCANEA-----TU-CODIGO---*/
+    #sectionScanea{
+        text-align: center;
+    }
+    #sectionScanea img{
+        width: 97%;
+    }
+    /*--------------RESPONSIVE----GANASTE------*/
+    #premio{
+        text-align: center;
+    }
+    #premio img{
+        width: 95%;
+    }
+    .bonus{
+        
+    }
+}
