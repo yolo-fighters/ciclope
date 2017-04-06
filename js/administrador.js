@@ -18,9 +18,68 @@ app.controller("controllerEmpresas", function($scope, $http) {
 	$scope.getEmpresas();
 });
 
+//password
+document.getElementById("r-password").placeholder="Contraseña";
+
+//email
+function validateEmail(_evt){
+    
+    var mensaje = $(".mensaje-email");
+    var textoEmail = "<h5 style='color:#be3144 ; font-size:18px; font-weight:bold; text-align:center;'>Correo Electrónico Inválido, debe contener ejemplo: hola@dominio.com</h5>";
+
+   if(/([a-zA-Z0-9(-_.)]+[@][a-zA-Z0-9]+[.][a-zA-Z]+)/g.test($("#email").val())){
+        mensaje.html('');
+    } else {
+        if($("#email").val().length >= 0){
+            mensaje.html(textoEmail);
+        }
+    }
+}
 
 
+//name
+function validateM(_evt){
+    var name = document.getElementById("r-name").value;
+    
+    var nameArray= name.split("");
+    var primeraLetra= nameArray[0];
+    var mayuscula = primeraLetra.toUpperCase();
+    var espacio= false;
+    
+    for (var i=1; i<nameArray.length; i++){
+        if(espacio){
+            mayuscula += nameArray[i].toUpperCase();
+            espacio =false;
+        }else
+			mayuscula += nameArray[i];
+			if(nameArray[i] ==" ")
+			espacio = true;
+					
+			}
+		document.getElementById("r-name").value= mayuscula;
+}
 
+function validateT(_evt){
+	letra = window.event.keyCode;
+	
+	if((letra>=65 && letra<=90) || letra==8 || letra==32){
+		
+	}else{
+		_evt.preventDefault();
+	}
+}
+
+//email
+function validateForm(){
+	var correo= document.getElementById("r-email").value;
+	
+	//var expresion= /\w+@+\w+[.]+[a-z]/g;
+	
+	if(!/([\w(-_.)]+[@][\w]+[.][\w]+)/g.test(correo)){
+		alert ("Email no válido");
+	}else
+		return false;
+}
 
 
 
@@ -46,6 +105,32 @@ function onClickInicio(){
     gotoSection('btn-inicio');
 }
 
+$(window).load(function(){
+
+ $(function() {
+  $('#file-input').change(function(e) {
+      addImage(e); 
+     });
+
+     function addImage(e){
+      var file = e.target.files[0],
+      imageType = /image.*/;
+    
+      if (!file.type.match(imageType))
+       return;
+  
+      var reader = new FileReader();
+      reader.onload = fileOnload;
+      reader.readAsDataURL(file);
+     }
+  
+     function fileOnload(e) {
+      var result=e.target.result;
+      $('#imgSalida').attr("src",result);
+     }
+    });
+  });
+
 function onClickConcurso(){
 	gotoSection('btn-concurso');
 }
@@ -59,8 +144,13 @@ function onClickEmpresa(){
 }
 
 function onClickAnadirEmpresa(){
+	
 	gotoSection('btn-anadirEmpresa');
+	
+	
 }
+
+
 
 function gotoSection(_identificador)
 {
