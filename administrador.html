@@ -203,7 +203,7 @@
     		</div>
     	</div> 
     </section>
-    </div>
+    
     <section id="btn-anadirEmpresa">
     	<div class="content">
     		<div class="container">
@@ -214,7 +214,7 @@
     						<div class="name" id="nombre">
 								<label for="name">Nombre</label>
 								<input type="text" id="r-name" class="form-control"
-								placeholder="Ingrese su nombre" onkeyup="validateM(event)" onkeydown="validateT(event)"  >
+								placeholder="Ingrese su nombre" ng-model="nombreEmpresa">
    							</div>
    							<br>
    							<label for="logo">Logo</label>
@@ -225,7 +225,7 @@
   							<br>
    							<label for="logo">Datos de Contacto</label>
    							<div class="input-group">
-   							  <textarea name="" id="" cols="30" rows="10"  style="width:100%"></textarea>
+   							  <textarea name="" id="" cols="30" rows="10"  style="width:100%" ng-model="contactoEmpresa"></textarea>
 							</div>
     						<input name="form-input" width="13%" height="13%" id="file-input" type="file" />
 							<br />
@@ -233,19 +233,20 @@
    						<button type="button" class="btn btn-primary" style="width:100%" ng-click="addEmpresa()" id="anadirAddEmpresa">Añadir Usuario</button>
     					</div>		
     					<div class="col-md-6">
-    						<div class="img-responsive" style="heigth:700px; margin-top:80px" id="map"></div>
+    						<div style="heigth:700px; margin-top:80px" id="map"></div>
     					</div>
     			    </div>	
     			</div>
     	</div>
     </section>
-    
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0O6LwAvlwMmf7NbSlmFOD4v-LXOUBXqo"></script>
+    
     <script src="js/administrador.js"></script>
     <script src="js/mapa.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8Beu2XxIG8nLJXGlSJeZpQnP21fkroYs&callback=initMap"
-    async defer></script>
+    
 </body>
 </html>

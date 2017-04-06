@@ -1,29 +1,41 @@
 var map;
+var maker;
 
 function initMap() {
- // Create a map object and specify the DOM element for display.   
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -16.457389199999998, lng: -71.5315308},
-    zoom:14,
-    disableDefaultUI: true
-  });
-    
-    var myLatLng = {lat: -16.457389199999998, lng: -71.5315308};
-    
-
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Hello World!',
-	//icon: "image/carpink (2).png",
+ // Create a map object and specify the DOM element for display.
+  	console.log("Init Map");
+	function placeMarker(location){	   
+	   if ( marker ) {
+		 marker.setPosition(location);
+	   } else {
+		 marker = new google.maps.Marker({
+		   position: location,
+		   map: map,
+		   icon: image
+		 });
+	   }
+	   latitude = location.lat();
+	   longitude = location.lng();
+	   map.setCenter(location);
+	 }
 	
-  });
+	var mapCanvas = document.getElementById('map');
+	var initLatlng = new google.maps.LatLng(-16.3891229,-71.5347932);
+	
+	var mapOptions = {
+         center:  initLatlng,
+         zoom: 15,
+		 mapTypeControl: false,
+		 navigationControlOptions: {
+           style: google.maps.NavigationControlStyle.SMALL
+         },
+         disableDefaultUI: true,
+         mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+	
+	map = new google.maps.Map(mapCanvas, mapOptions);
+	
  
-    
-	var geocoder = new google.maps.Geocoder();
-	
-	//solicitarEstimado();
-	//eventoClick();
 }
 
      /* function initMap() {

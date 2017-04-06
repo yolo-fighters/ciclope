@@ -1,9 +1,10 @@
 var app = angular.module("MyApp", []);
 
 app.controller("controllerEmpresas", function($scope, $http) {
+	$scope.domain = "http://192.168.0.137:3000";
 	$scope.listaEmpresas = [];
 	$scope.getEmpresas = function() {
-		$http.get("http://192.168.0.126:3000/api/todasEmpresas").then(function(response) {
+		var url = $scope.domain + "/api/todasEmpresas"; $http.get(url).then(function(response) {
 			for (var index = 0; index < response.data.result.length; index++) {
 				$scope.listaEmpresas.push(response.data.result[index]);		
 			}
@@ -11,9 +12,16 @@ app.controller("controllerEmpresas", function($scope, $http) {
 		})
 	}
 	$scope.addEmpresa = function() {
-		$scope.listaEmpresas.push({nombre: "test"});
-		console.log($scope.listaEmpresas);
-		$scope.$apply;
+		var url = $scope.domain + "/api/createEmpresa";
+		var data = {
+			nombre: $scope.nombeEmpresa,
+			contacto: $scope.contacto,
+			ruc: "12312323",
+			geopos: {latitude: "123123", longitude: "asdad"}
+		}
+		$http.post(url, data).then(function(response) {
+			console.log(response)
+		})
 	}
 	$scope.getEmpresas();
 });
@@ -30,7 +38,8 @@ function init()
 	$('#anadirConcurso').click(onClickAnadirConcurso);
 	$('#empresa').click(onClickEmpresa);
 	$('#anadirEmpresa').click(onClickAnadirEmpresa);
-    
+	initMap();
+	
 }
 
 $(function() {
