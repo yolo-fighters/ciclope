@@ -1,0 +1,12 @@
+@media screen and (max-width: 991px) {
+  #sorteo .list-sorteo li {
+    width: 47%; } }
+@media screen and (max-width: 740px) {
+  #sorteo .list-sorteo li {
+    width: 100%;
+    padding-right: 10px; }
+
+  #sorteo .list-sorteo li .add-pto {
+    right: 25px; } }
+
+/*# sourceMappingURL=queries.css.map */
