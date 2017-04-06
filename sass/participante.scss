@@ -1,48 +1,31 @@
 /*------------------------------------------------------------------------- ESTILOS GENERALES ------------------ */
-* {
-    //outline: 1px solid rgba(255, 0, 0, 0.4);
-}
-body{
-    box-sizing: border-box;
-}
 $main-color: #c34143;
-/*--------------------------------------------------------------------------------- MENU FIJO ------------------ */
-header {
-    margin-bottom: 70px;
-}
-header .navbar-brand {
-    margin-top: 8px;
-}
-header .navbar-nav>li>a {
-    padding-top: 23px;   
-    padding-bottom: 23px;   
-}
 
-/*------------------------------------------------------------------------------- MENU INICIO ------------------ */
-#inicio {
-    //margin-top: 66px;
-}
-#inicio .list-type, .list-sorteo {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-#inicio .list-type li, .list-sorteo li {
-    display: inline-block;
-    width: 25%;
-    text-align: center;
-}
-
-/*----------------------------------------------------------------------------- LISTA SORTEOS ------------------ */
 @mixin flotante {
     position: absolute;
     color: #fff;
 }
+
+@mixin listas {
+    list-style: none;
+    padding: 0;
+}
+
+.list-winners, .winners, .list-type, .list-sorteo {
+    @include listas;
+}
+/*----------------------------------------------------------------------------- LISTA SORTEOS ------------------ */
+$ancho: 100/3;
 #sorteo {
+    position: relative;
+    top: -44px;
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
     .list-sorteo li {
-        width: 31%;
+        width: 33.3333333333%;
         position: relative;
-        margin: 1%;
         
         .elemento {
             width: 100%;
@@ -88,15 +71,113 @@ header .navbar-nav>li>a {
     h1 {
         display: inline-block;
         margin: 0;
+        margin-bottom: 30px;
     }
     .input-group .form-control {
         height: 40px;
     }
     .i-calendar {
-        font-size: 28px;
+        font-size: 26px;
         color: $main-color;
+        position: absolute;
+        padding-left: 6px;
+        padding-top: 4px;
+        right: 19px;
     }
-    .datepicker {
-        
+    #datepicker {
+        padding: 4px;
+        text-align: center;
+    }
+    .list-winners {
+        .winners {
+            li {
+                display: inline-block;
+            }
+            .perfil-img {
+                width: 50px;
+            }
+        }
     }
 }
+
+/*----------------------------------------------------------------------------------- PREMIOS ------------------ */
+#premios{
+    margin-top: -44px;
+    li {
+        cursor: pointer;
+    }
+    .list-premios{
+        text-decoration: none;
+        margin: 0;
+        list-style: none;
+        padding: 0;
+        li {
+            height: 220px !important;
+            box-sizing: border-box;
+            width: 33%;
+            position: relative;
+            display: inline-block;
+            .elemento {
+                position: relative;
+                height: 220px !important;
+                width: 100%;
+            }
+            .logo-empresa {
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                bottom: 0;
+                z-index: 1000;
+            }
+            .nombre-elemento {
+                position: absolute;
+                background: rgba(195, 65, 67, 0.67);
+                bottom: 0;
+                right: 0;
+                color: #fff;
+                padding: 15px 30px;
+                font-size: 15px;
+                width: 100%;
+                text-align: right;
+                z-index: 900;
+            }
+        }
+    }
+    .list-descuentos {
+        text-decoration: none;
+        margin: 0;
+        list-style: none;
+        padding: 0;
+        li {
+            width: 33.3333%;
+            position: relative;
+            display: inline-block;
+            img{
+                height: 100px !important;
+                width: 100px ;
+            }
+            .dscto {
+                margin-top: 0;
+                background: rgba(195, 65, 67, 0.67);
+                padding: 32.5px 0;
+                font-size: 25px;
+                font-weight: bold;
+                color: #fff;
+            }
+            .col-md-4{
+                padding: 0;
+            }
+            .dscto-detalle{
+                font-weight: bold;
+            }
+            logo-empresa {
+                margin: 0;
+            }
+            .elemento{
+                width: 100%;
+            }
+        }
+    }
+}
+/*-------------------------------------------------------------------------------- RESULTADOS ------------------ */
+/*-------------------------------------------------------------------------------- RESULTADOS ------------------ */

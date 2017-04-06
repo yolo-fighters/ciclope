@@ -1,0 +1,94 @@
+/* ------------------------------------------------------------------------ ESTILOS GENERALES ------------ */
+body {
+    background: url(../img/background.jpg) no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.fondo {
+    background: rgba(0, 0, 0, 0.57);
+    height: 100%;
+    min-height: 700px;
+}
+
+$main-color: #c34143;
+
+/* ------------------------------------------------------------------------------- BIENVENIDA ------------ */
+.welcome {
+    margin: 0;
+    padding: 100px 0;
+    color: #fff;
+    font-size: 40px;
+}
+.btn-in {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    font-size: 45px;
+    color: #fff;
+    background: rgba(195, 65, 67, 0.78);
+    margin: 0 auto;
+    display: block;
+    border-radius: 100%;
+}
+
+/* ----------------------------------------------------------------------------------- SIGNUP ------------ */
+#signup {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    .contenedor {
+        width: 50%;
+        margin: 0 auto;
+        padding: 40px 80px;
+        background: rgba(255, 255, 255, 0.63);
+        h1{
+            margin-top: 0;
+            color: #000;
+        }
+        .btn {
+            border-radius: 0;
+            display: block;
+            margin: 15px auto;
+            color: #fff;
+            padding-left: 5px;
+            img{
+                margin-right: 5px;
+            }
+        }
+        .btn-face{
+            background: #3b5998;
+        }
+        .btn-gmail{
+            background: #4586f6;
+        }
+        .btn-init {
+            background: $main-color;
+        }
+        hr{
+            border: 1.5px solid #ccc;
+        }
+        span{
+            display: block;
+            position: relative;
+            top: -15px;
+            font-size: 20px;
+            text-align: center;
+        }
+        input {
+            border-radius: 0;
+            border-color: #a7a7a7;
+        }
+        #email {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

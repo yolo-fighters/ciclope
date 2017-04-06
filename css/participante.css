@@ -1,63 +1,47 @@
 /*------------------------------------------------------------------------- ESTILOS GENERALES ------------------ */
-body {
-  box-sizing: border-box; }
-
-/*--------------------------------------------------------------------------------- MENU FIJO ------------------ */
-header {
-  margin-bottom: 70px; }
-
-header .navbar-brand {
-  margin-top: 8px; }
-
-header .navbar-nav > li > a {
-  padding-top: 23px;
-  padding-bottom: 23px; }
-
-/*------------------------------------------------------------------------------- MENU INICIO ------------------ */
-#inicio .list-type, .list-sorteo {
+.list-winners, .winners, .list-type, .list-sorteo {
   list-style: none;
-  padding: 0;
-  margin: 20px 0; }
-
-#inicio .list-type li, .list-sorteo li {
-  display: inline-block;
-  width: 25%;
-  text-align: center; }
+  padding: 0; }
 
 /*----------------------------------------------------------------------------- LISTA SORTEOS ------------------ */
-#sorteo .list-sorteo li {
-  width: 31%;
+#sorteo {
   position: relative;
-  margin: 1%; }
-  #sorteo .list-sorteo li .elemento {
-    width: 100%; }
-  #sorteo .list-sorteo li .logo-empresa {
-    position: absolute;
-    color: #fff;
-    width: 100px;
-    top: 5px;
-    left: 5px; }
-  #sorteo .list-sorteo li .nombre-elemento {
-    position: absolute;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.51);
-    padding: 5px;
-    display: inline-block;
-    bottom: 0;
-    left: 0;
-    font-size: 18px; }
-  #sorteo .list-sorteo li .add-pto {
-    position: absolute;
-    color: #fff;
-    background: #c34143;
-    border-radius: 100%;
-    padding: 15px;
-    display: inline-block;
-    bottom: 0;
-    right: 10px;
-    line-height: 1;
-    font-size: 15px;
-    font-family: 'Glyphicons Halflings'; }
+  top: -44px; }
+  #sorteo .container-fluid {
+    padding-left: 0;
+    padding-right: 0; }
+  #sorteo .list-sorteo li {
+    width: 33.3333333333%;
+    position: relative; }
+    #sorteo .list-sorteo li .elemento {
+      width: 100%; }
+    #sorteo .list-sorteo li .logo-empresa {
+      position: absolute;
+      color: #fff;
+      width: 100px;
+      top: 5px;
+      left: 5px; }
+    #sorteo .list-sorteo li .nombre-elemento {
+      position: absolute;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.51);
+      padding: 5px;
+      display: inline-block;
+      bottom: 0;
+      left: 0;
+      font-size: 18px; }
+    #sorteo .list-sorteo li .add-pto {
+      position: absolute;
+      color: #fff;
+      background: #c34143;
+      border-radius: 100%;
+      padding: 15px;
+      display: inline-block;
+      bottom: 0;
+      right: 10px;
+      line-height: 1;
+      font-size: 15px;
+      font-family: 'Glyphicons Halflings'; }
 
 /*-------------------------------------------------------------------------------- RESULTADOS ------------------ */
 .datepicker.dropdown-menu {
@@ -67,11 +51,91 @@ header .navbar-nav > li > a {
   padding: 15px 0; }
   #resultados h1 {
     display: inline-block;
-    margin: 0; }
+    margin: 0;
+    margin-bottom: 30px; }
   #resultados .input-group .form-control {
     height: 40px; }
   #resultados .i-calendar {
-    font-size: 28px;
-    color: #c34143; }
+    font-size: 26px;
+    color: #c34143;
+    position: absolute;
+    padding-left: 6px;
+    padding-top: 4px;
+    right: 19px; }
+  #resultados #datepicker {
+    padding: 4px;
+    text-align: center; }
+  #resultados .list-winners .winners li {
+    display: inline-block; }
+  #resultados .list-winners .winners .perfil-img {
+    width: 50px; }
+
+/*----------------------------------------------------------------------------------- PREMIOS ------------------ */
+#premios {
+  margin-top: -44px; }
+  #premios li {
+    cursor: pointer; }
+  #premios .list-premios {
+    text-decoration: none;
+    margin: 0;
+    list-style: none;
+    padding: 0; }
+    #premios .list-premios li {
+      height: 220px !important;
+      box-sizing: border-box;
+      width: 33%;
+      position: relative;
+      display: inline-block; }
+      #premios .list-premios li .elemento {
+        position: relative;
+        height: 220px !important;
+        width: 100%; }
+      #premios .list-premios li .logo-empresa {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        bottom: 0;
+        z-index: 1000; }
+      #premios .list-premios li .nombre-elemento {
+        position: absolute;
+        background: rgba(195, 65, 67, 0.67);
+        bottom: 0;
+        right: 0;
+        color: #fff;
+        padding: 15px 30px;
+        font-size: 15px;
+        width: 100%;
+        text-align: right;
+        z-index: 900; }
+  #premios .list-descuentos {
+    text-decoration: none;
+    margin: 0;
+    list-style: none;
+    padding: 0; }
+    #premios .list-descuentos li {
+      width: 33.3333%;
+      position: relative;
+      display: inline-block; }
+      #premios .list-descuentos li img {
+        height: 100px !important;
+        width: 100px; }
+      #premios .list-descuentos li .dscto {
+        margin-top: 0;
+        background: rgba(195, 65, 67, 0.67);
+        padding: 32.5px 0;
+        font-size: 25px;
+        font-weight: bold;
+        color: #fff; }
+      #premios .list-descuentos li .col-md-4 {
+        padding: 0; }
+      #premios .list-descuentos li .dscto-detalle {
+        font-weight: bold; }
+      #premios .list-descuentos li logo-empresa {
+        margin: 0; }
+      #premios .list-descuentos li .elemento {
+        width: 100%; }
+
+/*-------------------------------------------------------------------------------- RESULTADOS ------------------ */
+/*-------------------------------------------------------------------------------- RESULTADOS ------------------ */
 
 /*# sourceMappingURL=participante.css.map */
