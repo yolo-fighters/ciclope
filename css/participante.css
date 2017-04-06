@@ -2,9 +2,15 @@
 body {
   box-sizing: border-box; }
 
+.list-winners, .winners, .list-type, .list-sorteo {
+  list-style: none;
+  padding: 0; }
+
 /*--------------------------------------------------------------------------------- MENU FIJO ------------------ */
 header {
   margin-bottom: 70px; }
+  header #a-results, header #a-contact {
+    cursor: pointer; }
 
 header .navbar-brand {
   margin-top: 8px; }
@@ -14,10 +20,31 @@ header .navbar-nav > li > a {
   padding-bottom: 23px; }
 
 /*------------------------------------------------------------------------------- MENU INICIO ------------------ */
-#inicio .list-type, .list-sorteo {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0; }
+#inicio .list-type {
+  margin: 20px 0;
+  color: #fff; }
+  #inicio .list-type li:nth-child(1) {
+    background: #8f4791; }
+    #inicio .list-type li:nth-child(1):hover {
+      background: #69346a; }
+  #inicio .list-type li:nth-child(2) {
+    background: #f9ce55; }
+    #inicio .list-type li:nth-child(2):hover {
+      background: #f2bd28; }
+  #inicio .list-type li:nth-child(3) {
+    background: #ea6d4e; }
+    #inicio .list-type li:nth-child(3):hover {
+      background: #d95b3c; }
+  #inicio .list-type li:nth-child(4) {
+    background: #5cb5a1; }
+    #inicio .list-type li:nth-child(4):hover {
+      background: #4d9b8a; }
+  #inicio .list-type li {
+    padding: 10px 0;
+    cursor: pointer; }
+  #inicio .list-type i {
+    font-size: 20px;
+    padding-right: 10px; }
 
 #inicio .list-type li, .list-sorteo li {
   display: inline-block;
@@ -71,7 +98,18 @@ header .navbar-nav > li > a {
   #resultados .input-group .form-control {
     height: 40px; }
   #resultados .i-calendar {
-    font-size: 28px;
-    color: #c34143; }
+    font-size: 26px;
+    color: #c34143;
+    position: absolute;
+    padding-left: 6px;
+    padding-top: 4px;
+    right: 19px; }
+  #resultados #datepicker {
+    padding: 4px;
+    text-align: center; }
+  #resultados .list-winners .winners li {
+    display: inline-block; }
+  #resultados .list-winners .winners .perfil-img {
+    width: 50px; }
 
 /*# sourceMappingURL=participante.css.map */

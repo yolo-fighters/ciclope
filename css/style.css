@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?v5ckoj');
+  src:  url('fonts/icomoon.eot?v5ckoj#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?v5ckoj') format('truetype'),
+    url('fonts/icomoon.woff?v5ckoj') format('woff'),
+    url('fonts/icomoon.svg?v5ckoj#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dots-three-vertical:before {
+  content: "\e902";
+}
+.icon-chevron-up:before {
+  content: "\f077";
+}
+.icon-chevron-down:before {
+  content: "\f078";
+}
+.icon-bed:before {
+  content: "\f236";
+}
+.icon-hotel:before {
+  content: "\f236";
+}
+.icon-hand-paper-o:before {
+  content: "\f256";
+}
+.icon-hand-stop-o:before {
+  content: "\f256";
+}
+.icon-hand-pointer-o:before {
+  content: "\f25a";
+}
+.icon-hand-peace-o:before {
+  content: "\f25b";
+}
+.icon-user-circle-o:before {
+  content: "\f2be";
+}
+.icon-bowling-pins:before {
+  content: "\e900";
+}
+.icon-spoon-knife:before {
+  content: "\e9a3";
+}
+

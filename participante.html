@@ -7,10 +7,12 @@
     <title>Ciclope</title>
     <link rel="icon" type="image/ico" href="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="css/participante.css">
     <link rel="stylesheet" href="css/queries.css">
 </head>
+<div ng-app="myApp">
 <body onload="init()" data-spy="scroll" data-target=".navbar" data-offset="50">
 <!-- --------------------------------------------------------------------------------- MENU FIJO ------------------>
     <header>
@@ -27,7 +29,7 @@
                 <div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a href="" id="a-inicio">Inicio</a></li>
+                            <li><a href="participante.html" id="a-inicio">Inicio</a></li>
                             <li><a id="a-results">Resultados</a></li>
                             <li><a id="a-contact">Contacto</a></li>
                         </ul>
@@ -41,67 +43,77 @@
     <section id="inicio">
         <div class="container">
             <ul class="list-type">
-                <li>Todo</li><li>Comida</li><li>Hospedaje</li><li>Cosas</li>
+                <li><i class="icon-hand-peace-o"></i>Todo</li><li><i class="icon-spoon-knife"></i>Comida</li><li><i class="icon-bed"></i>Hospedaje</li><li><i class="icon-hand-paper-o"></i>Cosas</li>
             </ul>
         </div>
     </section> 
    
 <!-- ----------------------------------------------------------------------------- LISTA SORTEOS ------------------>
-    <section id="sorteo" style="display:none;">
+<div ng-controller="sorteoController">
+    <section id="sorteo">
         <div class="container">
             <ul class="list-sorteo">
-                <li>
+                <li ng-repeat="plato in platos" ng-repeat="participante in participantes">
                     <img class="elemento" src="img/ceviche.jpg" alt="">
                     <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                    <p class="nombre-elemento">Nombre del plato</p>
-                    <p class="glyphicon-plus add-pto"></p>
-                </li>
-                <li>
-                    <img class="elemento" src="img/ceviche.jpg" alt="">
-                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                    <p class="nombre-elemento">Nombre del plato</p>
-                    <p class="glyphicon-plus add-pto"></p>
-                </li>
-                <li>
-                    <img class="elemento" src="img/ceviche.jpg" alt="">
-                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                    <p class="nombre-elemento">Nombre del plato</p>
-                    <p class="glyphicon-plus add-pto"></p>
-                </li>
-                <li>
-                    <img class="elemento" src="img/ceviche.jpg" alt="">
-                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                    <p class="nombre-elemento">Nombre del plato</p>
-                    <p class="glyphicon-plus add-pto"></p>
-                </li>
-                <li>
-                    <img class="elemento" src="img/ceviche.jpg" alt="">
-                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                    <p class="nombre-elemento">Nombre del plato</p>
-                    <p class="glyphicon-plus add-pto"></p>
-                </li>
-                <li>
-                    <img class="elemento" src="img/ceviche.jpg" alt="">
-                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                    <p class="nombre-elemento">Nombre del plato</p>
-                    <p class="glyphicon-plus add-pto"></p>
+                    <p class="nombre-elemento">{{plato.nombre}}</p>
+                    <p class="glyphicon-plus add-pto" ng-click="plusOne($index)">{{participante.puntos}}</p>
                 </li>
             </ul>
         </div>
     </section>
-    
+</div>
 <!-- -------------------------------------------------------------------------------- RESULTADOS ------------------>
-    <div ng-app="Myapp" ng-controller="MainController">
-       <section id="resultados">
+    <div ng-controller="MainController">
+       <section id="resultados" style="display:none;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
                         <h1>Resultados del 31 de Marzo del 2017</h1>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" id="datepicker"><i class="i-calendar glyphicon glyphicon-calendar"></i>
+                        <input type="text" id="datepicker" class="form-control"><i class="i-calendar glyphicon glyphicon-calendar"></i>
                     </div>
                 </div>
+                <ul class="list-winners">
+                    <li>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="img/ceviche.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <h3>Ganadores</h3>
+                                <ul class="winners">
+                                    <li>Maria <img src="img/profile.png" alt="" class="perfil-img"></li>
+                                    <li>Lucia <img src="img/profile.png" alt="" class="perfil-img"></li>
+                                    <li>Kelly <img src="img/profile.png" alt="" class="perfil-img"></li>
+                                </ul>
+                                <h3>Descuentos</h3>
+                                <p class="dcto-info">10% en Ceviche a lo pobre</p>
+                                <p class="win-dcto">Maria, Rocio, Humberto, Josefa y otras 134 personas más.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <hr>
+                    <li>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="img/ceviche.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <h3>Ganadores</h3>
+                                <ul class="winners">
+                                    <li>Kelly <img src="img/profile.png" alt="" class="perfil-img"></li>
+                                    <li>Lucia <img src="img/profile.png" alt="" class="perfil-img"></li>
+                                    <li>Maria <img src="img/profile.png" alt="" class="perfil-img"></li>
+                                </ul>
+                                <h3>Descuentos</h3>
+                                <p class="dcto-info">5% en toda la tienda</p>
+                                <p class="win-dcto">Maria, Rocio, Humberto, Josefa y otras 134 personas más.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
             <button id="btn-a" ng-click="getConcursos()">enviar</button>
             <input type="text" ng-model="test">
@@ -120,4 +132,5 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/participante.js"></script>
 </body>
+</div>
 </html>

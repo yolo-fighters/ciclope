@@ -6,9 +6,35 @@ body{
     box-sizing: border-box;
 }
 $main-color: #c34143;
+$dark-color: #802b2c;
+$color-todo: #8f4791;
+$color-todo-dark: #69346a;
+$color-comida: #f9ce55;
+$color-comida-dark: #f2bd28;
+$color-hospedaje: #ea6d4e;
+$color-hospedaje-dark: #d95b3c;
+$color-cosa: #5cb5a1;
+$color-cosa-dark: #4d9b8a;
+
+@mixin flotante {
+    position: absolute;
+    color: #fff;
+}
+
+@mixin listas {
+    list-style: none;
+    padding: 0;
+}
+
+.list-winners, .winners, .list-type, .list-sorteo {
+    @include listas;
+}
 /*--------------------------------------------------------------------------------- MENU FIJO ------------------ */
 header {
     margin-bottom: 70px;
+    #a-results, #a-contact {
+        cursor: pointer;
+    }
 }
 header .navbar-brand {
     margin-top: 8px;
@@ -21,11 +47,43 @@ header .navbar-nav>li>a {
 /*------------------------------------------------------------------------------- MENU INICIO ------------------ */
 #inicio {
     //margin-top: 66px;
-}
-#inicio .list-type, .list-sorteo {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
+    .list-type {
+        //background: $main-color;
+        margin: 20px 0;
+        color: #fff;
+        li:nth-child(1){
+            background: $color-todo;
+            &:hover {
+                background:$color-todo-dark;
+            }
+        }
+        li:nth-child(2){
+            background: $color-comida;
+            &:hover {
+                background:$color-comida-dark;
+            }
+        }
+        li:nth-child(3){
+            background: $color-hospedaje;
+            &:hover {
+                background:$color-hospedaje-dark;
+            }
+        }
+        li:nth-child(4){
+            background: $color-cosa;
+            &:hover {
+                background:$color-cosa-dark;
+            }
+        }
+        li {
+            padding: 10px 0;
+            cursor: pointer;
+        }
+        i {
+            font-size: 20px;
+            padding-right: 10px;
+        }
+    }
 }
 #inicio .list-type li, .list-sorteo li {
     display: inline-block;
@@ -34,10 +92,6 @@ header .navbar-nav>li>a {
 }
 
 /*----------------------------------------------------------------------------- LISTA SORTEOS ------------------ */
-@mixin flotante {
-    position: absolute;
-    color: #fff;
-}
 #sorteo {
     .list-sorteo li {
         width: 31%;
@@ -93,10 +147,25 @@ header .navbar-nav>li>a {
         height: 40px;
     }
     .i-calendar {
-        font-size: 28px;
+        font-size: 26px;
         color: $main-color;
+        position: absolute;
+        padding-left: 6px;
+        padding-top: 4px;
+        right: 19px;
     }
-    .datepicker {
-        
+    #datepicker {
+        padding: 4px;
+        text-align: center;
+    }
+    .list-winners {
+        .winners {
+            li {
+                display: inline-block;
+            }
+            .perfil-img {
+                width: 50px;
+            }
+        }
     }
 }
