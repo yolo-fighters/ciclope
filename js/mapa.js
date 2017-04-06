@@ -15,13 +15,27 @@ function initMap() {
     position: myLatLng,
     map: map,
     title: 'Hello World!',
-	icon: "image/carpink (2).png",
+	//icon: "image/carpink (2).png",
 	
   });
  
     
 	var geocoder = new google.maps.Geocoder();
 	
-	solicitarEstimado();
-	eventoClick();
+	//solicitarEstimado();
+	//eventoClick();
 }
+
+     /* function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }*/
+   
+

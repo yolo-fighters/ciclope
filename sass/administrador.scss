@@ -1,3 +1,17 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+#map {
+  position: absolute;
+  left: 0;
+  top: 30%;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  border-width: 0; }
+
 header {
   position: relative;
   z-index: 100; }
@@ -18,8 +32,8 @@ section {
 .content {
   background: #fff;
   display: table-cell;
-  vertical-align: middle; 
-}
+  vertical-align: middle; }
+
 header {
 	navbar-brand {
    		margin-top: 8px;
@@ -28,5 +42,6 @@ header {
     	padding-top: 23px;  
     	padding-bottom: 23px;   
 	}
+
 }
 @import "empresa";
