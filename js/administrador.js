@@ -21,7 +21,7 @@ app.controller("controllerEmpresas", function($scope, $http) {
 			longitude: "asdad"
 		}
 		$http.post(url, data).then(function(response) {
-			alert("Empresa creada con Exito!");
+			sweetAlert("Empresa creada con Exito!");
 			$scope.listaEmpresas.push(response.data.result);
 			$scope.$apply;
 		})
