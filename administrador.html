@@ -145,7 +145,7 @@
 						<th>EMPRESAS</th>
 						<th>ESTADOS</th>
 						<th>CONCURSOS</th>
-						<th><span class="" type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">USUARIOS</span></th>
+						<th><span class="" type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">USUARIOS <i class="glyphicon glyphicon-plus"></i> </span></th>
 													
 							<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						  <div class="modal-dialog" role="document">
@@ -194,7 +194,7 @@
 						<td><input type="checkbox" ng-checked="{{empresa.estado}}"></td>
 						<td>{{empresa.concursos}}</td>
 						<td>{{empresa.usuarios}} <span class="glyphicon glyphicon-chevron-up" id=""></span></td>
-						<td><span class="glyphicon glyphicon-pencil"></span></td>
+						<td><span class="glyphicon glyphicon-pencil theclass" ng-click="delete()"></span></td>
 						<td><span class="glyphicon glyphicon-trash"></span></td>
 					  </tr>
 					  
