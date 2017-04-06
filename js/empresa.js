@@ -45,6 +45,7 @@ function cambioFecha(){
     var meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto", "Septiembre","Octubre","Nobienbre","Diciembre"];
     
     var tiempo= $('#datepicker').val();
+    
     var listaDatos=tiempo.split("/");
     
     var tmpDate = new Date(listaDatos[2], listaDatos[0]-1, listaDatos[1]);
@@ -56,21 +57,24 @@ function cambioFecha(){
     $(".col-xs-2").append(html);
     $("#fechaMes").append(html2);    
 }
-var app = angular.module("Myapp",[]);
+
+//FUNCION PARA INGRESAR EL CODIGO DE LA EMPRESA
+
+var app = angular.module("Myapp", []);
 app.controller("ControladorCodigo",function($scope, $http){
     $scope.getCodigo=function(){
-     $http.get('http://192.168.0.126:3000/api/todasEmpresas').then(function(info)
-        { 
-         for ()
-            $scope.test = info.data.result[0].codigo;
-         
-         console.log($scope.test = info.data.result[0].codigo);
-            $scope.$apply;
-        });
-        $scope.test='PRUEVA';
+    $http.get('http://192.168.0.126:3000/api/todasEmpresas').then(function(response){
+        for(var i in response.data.result){
+            var resultado =response.data.result[i].codigo;
+            console.log(resultado);
+        }
+        var test=$scope.test;
+        if(test==resultado){
+            alert('hola...!!!');
+        }else{
+            alert('noo...!!');
+        }
+      });
     };
 });
-
-
-
 

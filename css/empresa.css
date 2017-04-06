@@ -5,9 +5,6 @@ section{
     height: 89%;
     display: none;
 }
-img{
-    width: 100%;
-}
 .visible{
     display:block;
 }
@@ -19,6 +16,9 @@ img{
 .navbar-default{
     background: #1a1919;
 }
+input{
+    margin:30px;
+}
 /*-------------------estilos---primera secion-------*/
 .img-responsive{
     height: 250px;
@@ -29,8 +29,20 @@ img{
     padding: 20px;
     border: 1px solid #000000;
 }
+img{
+    width:100%;
+}
 /*-------------------estilos---segunda--secion--------*/
 #sectionScanea img {
     width:30%;
-    
+}
+
+/*----------------------MEDIA--QUERIES------------*/
+@media (max-width:764px) and (min-width:319px){
+    #sectionScanea{
+        text-align:center;
+    }
+    #sectionScanea img{
+        width:100%;
+    }
 }
