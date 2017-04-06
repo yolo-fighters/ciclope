@@ -6,12 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ciclope</title>
     <link rel="icon" type="image/ico" href="">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/participante.css">
+    <link rel="stylesheet" href="css/queries.css">
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<div ng-app="myApp">
+<body onload="init()" data-spy="scroll" data-target=".navbar" data-offset="50">
 <!-- --------------------------------------------------------------------------------- MENU FIJO ------------------>
     <header>
+        <div class="container">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -20,80 +28,178 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>                        
                     </button>
-                    <a class="navbar-brand" href="#">Ciclope</a>
+                    <a class="navbar-brand" href="#"><img src="img/logo.PNG" alt="" width="200px;"></a>
                 </div>
                 <div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a href="#section1">Inicio</a></li>
-                            <li><a href="#section2">Resultados</a></li>
-                            <li><a href="#section3">Contacto</a></li>
+                            <li><a href="participante.html" id="a-inicio">INICIO</a></li>
+                            <li><a id="a-results">RESULTADOS</a></li>
+                            <li><a id="a-contact">CONTACTO</a></li>
+                        </ul>
+                        <ul class="cuenta">
+                            <li><a href="">Inicia Sesión</a></li>
+                            <li><a href="">Crea tu cuenta</a></li>
+                            <li><a href="" class="icono"><i class="icon-trophy2"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </nav>  
+        </nav>
+        </div>
     </header>
+
 <!-- ------------------------------------------------------------------------------- MENU INICIO ------------------>
     <section id="inicio">
         <div class="container">
-            <div class="row">
-                <ul class="list-type">
-                    <li>Todo</li><li>Comida</li><li>Hospedaje</li><li>Cosas</li>
-                </ul>
-            </div>
+            <ul class="list-type">
+                <li><i class="icon-hand-peace-o"></i>Todo</li><li><i class="icon-spoon-knife"></i>Comida</li><li><i class="icon-bed"></i>Hospedaje</li><li><i class="icon-hand-paper-o"></i>Cosas</li>
+            </ul>
         </div>
-    </section> 
-   
+    </section>
    
 <!-- ----------------------------------------------------------------------------- LISTA SORTEOS ------------------>
+<div ng-controller="sorteoController">
     <section id="sorteo">
-        <div class="container">
-            <div class="row">
-                <ul class="list-sorteo">
+        <div class="container-fluid">
+            <ul class="list-sorteo">
+                <li ng-repeat="plato in platos" >
+                    <img class="elemento" src="img/ceviche.jpg" alt="">
+                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
+                    <p class="nombre-elemento">{{plato.nombre}}</p>
+                    <p class="glyphicon-plus add-pto" ng-click="plusOne($index)">{{plato.puntos}}</p>
+                </li><li>
+                    <img class="elemento" src="img/capuchino.jpg" alt="">
+                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
+                    <p class="nombre-elemento">Capucchino</p>
+                    <p class="glyphicon-plus add-pto"></p>
+                </li><li>
+                    <img class="elemento" src="img/ceviche.jpg" alt="">
+                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
+                    <p class="nombre-elemento">Ceviche de pescado</p>
+                    <p class="glyphicon-plus add-pto"></p>
+                </li><li>
+                    <img class="elemento" src="img/picante.jpg" alt="">
+                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
+                    <p class="nombre-elemento">Picante de mariscos</p>
+                    <p class="glyphicon-plus add-pto"></p>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+<!-- -------------------------------------------------------------------------------- RESULTADOS ------------------>
+    <div ng-controller="MainController">
+       <section id="resultados" style="display:none;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h1>Resultados del 31 de Marzo del 2017</h1>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" id="datepicker" class="form-control"><i class="i-calendar glyphicon glyphicon-calendar"></i>
+                    </div>
+                </div>
+                <ul class="list-winners">
                     <li>
-                        <img class="elemento" src="img/ceviche.jpg" alt="">
-                        <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                        <p class="nombre-elemento">Nombre del plato</p>
-                        <div class="puntos"><i class="glyphicon glyphicon-plus add-pto"></i></div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="img/ceviche.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <h3>Ganadores</h3>
+                                <ul class="winners">
+                                    <li>Maria <img src="img/profile.png" alt="" class="perfil-img"></li>
+                                    <li>Lucia <img src="img/profile.png" alt="" class="perfil-img"></li>
+                                    <li>Kelly <img src="img/profile.png" alt="" class="perfil-img"></li>
+                                </ul>
+                                <h3>Descuentos</h3>
+                                <p class="dcto-info">10% en Ceviche a lo pobre</p>
+                                <p class="win-dcto">Maria, Rocio, Humberto, Josefa y otras 134 personas más.</p>
+                            </div>
+                        </div>
                     </li>
+                    <hr>
                     <li>
-                        <img class="elemento" src="img/ceviche.jpg" alt="">
-                        <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                        <p class="nombre-elemento">Nombre del plato</p>
-                        <div class="puntos"><i class="glyphicon glyphicon-plus add-pto"></i></div>
-                    </li>
-                    <li>
-                        <img class="elemento" src="img/ceviche.jpg" alt="">
-                        <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                        <p class="nombre-elemento">Nombre del plato</p>
-                        <div class="puntos"><i class="glyphicon glyphicon-plus add-pto"></i></div>
-                    </li>
-                    <li>
-                        <img class="elemento" src="img/ceviche.jpg" alt="">
-                        <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                        <p class="nombre-elemento">Nombre del plato</p>
-                        <div class="puntos"><i class="glyphicon glyphicon-plus add-pto"></i></div>
-                    </li>
-                    <li>
-                        <img class="elemento" src="img/ceviche.jpg" alt="">
-                        <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                        <p class="nombre-elemento">Nombre del plato</p>
-                        <div class="puntos"><i class="glyphicon glyphicon-plus add-pto"></i></div>
-                    </li>
-                    <li>
-                        <img class="elemento" src="img/ceviche.jpg" alt="">
-                        <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                        <p class="nombre-elemento">Nombre del plato</p>
-                        <div class="puntos"><i class="glyphicon glyphicon-plus add-pto"></i></div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="img/ceviche.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <h3>Ganadores</h3>
+                                <ul class="winners">
+                                    <li>Kelly <img src="img/profile.png" alt="" class="perfil-img"></li>
+                                    <li>Lucia <img src="img/profile.png" alt="" class="perfil-img"></li>
+                                    <li>Maria <img src="img/profile.png" alt="" class="perfil-img"></li>
+                                </ul>
+                                <h3>Descuentos</h3>
+                                <p class="dcto-info">5% en toda la tienda</p>
+                                <p class="win-dcto">Maria, Rocio, Humberto, Josefa y otras 134 personas más.</p>
+                            </div>
+                        </div>
                     </li>
                 </ul>
+            </div>
+            <button id="btn-a" ng-click="getConcursos()">enviar</button>
+            <input type="text" ng-model="test">
+        </section>
+    </div>
+
+<!-- ----------------------------------------------------------------------------------- PREMIOS ------------------>
+    <section id="premios" style="display:none;">
+        <div class="container">
+            <div ng-controller="premioController">
+            <h1>Premios</h1>
+            <ul class="list-premios">
+                <li ng-repeat="premio in premios">
+                    <img class="img-responsive elemento" ng-src="{{premio.url}}" alt="" height="220px;">
+                    <img ng-src="{{premio.urllogo}}" class="logo-empresa" alt="">
+                    <p class="nombre-elemento"><b>GRATIS</b> {{premio.concurso}}</p>
+                </li>
+            </ul>
+            <h1>Descuentos</h1>
+            <ul class="list-descuentos">
+                <div class="container">
+                <li ng-repeat="descuento in descuentos">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p class="text-center dscto">{{descuento.descuento}}</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="img-responsive elemento" src="img/ceviche.jpg" class="img-responsive" alt="">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="img/purolimon.jpg" class="img-responsive logo-empresa" alt="">
+                        </div>
+                    </div>
+                    <p class="dscto-detalle text-center">{{descuento.nombre}}</p>
+                </li>
+                </div>
+            </ul>
             </div>
         </div>
     </section>
-<!-- ------------------------------------------------------------------------------- MENU INICIO ------------------>
-    <script src="js/participante.js"></script>
+<!-- ----------------------------------------------------------------------------------- CANJEAR ------------------>
+    <section id="canjear" style="display:none;">
+        <div class="container">
+            <h1>Canjea tu premio!</h1>
+            <div class="row">
+                <div class="col-md-4 col-xs-12"><img src="img/qr.png" alt=""><p>Muestra este QR al momento del canje y obtendrás el premio</p></div>
+                <div class="col-md-4 col-xs-12"><!-- el evento que se le hizo click, se deberia pasar todos los estilos? --></div>
+                <div class="col-md-4 col-xs-12"><div class="map" style="height:200px; width:100%;"></div><p>Direccion</p></div>
+            </div>
+        </div>
+    </section>
+    
+    
+<!-- --------------------------------------------------------------------------------- CONTACTOS ------------------>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/participante.js"></script>
 </body>
+</div>
 </html>
