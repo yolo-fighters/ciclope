@@ -12,7 +12,7 @@ function htmlImagenes (){
         { "imagen":'img/ceviche.jpg', "Text":"Ceviche al macho", "mes":"Marzo"},      
         { "imagen":'img/ceviche.jpg', "Text":"Ceviche al macho", "mes":""},      
         { "imagen":'img/ceviche.jpg', "Text":"Ceviche al macho", "mes":""},      
-        { "imagen":'img/ceviche.jpg', "Text":"Ceviche al macho", "mes":""},      
+        { "imagen":'img/ceviche.jpg', "Text":"Ceviche al macho", "mes":"Junio"},      
         { "imagen":'img/ceviche.jpg', "Text":"Ceviche al macho", "mes":""}      
     ];
     var carga= '';
@@ -35,3 +35,8 @@ function secInicio(){
     $('#jugadores').show();
     $('#sectionScanea').hide();
 }
+
+
+$(function (){
+$("#datepicker").datepicker();
+});
