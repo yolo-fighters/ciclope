@@ -2,7 +2,7 @@
 section{
     position: absolute;
     width: 100%;
-    height: 89%;
+    height: 82%;
     display: none;
 }
 .visible{
@@ -70,7 +70,7 @@ img{
 
 /*-------SECION---FELIZIDADES-GANASTE--PREMIO-----------------*/
 #premio img{
-    width:30%;
+    width:50%;
 }
 #premio h3{
     float:left;
@@ -96,16 +96,50 @@ img{
     font-size: 40px;
     font-weight:bolder;
 }
-/*-------ESTILOS DE INPUT DE INFORMACION-----------------*/
+
+
 /*----------------------MEDIA--QUERIES------------*/
 @media (max-width:764px) and (min-width:319px){
-    #sectionScanea{
-        text-align:center;
-    }
-    #sectionScanea img{
-        width:100%;
-    }
+    
     .navbar-default input{
         display: none;
+    }
+    .border{
+        border: none;
+    }
+    #fechaMes{
+        position: absolute;
+        font-size: 25px;
+    }
+    .fa-calendar{
+        position: absolute;
+        top: 3px;
+        left: 57px;
+    }
+    .letra h2{
+        font-size: 20px;
+    }
+    .col-md-2 p{
+        font-size: 17px;
+    }
+    .numero{
+        width:100%;
+    }
+    /*---RESPONSI----ESCANEA-----TU-CODIGO---*/
+    #sectionScanea{
+        text-align: center;
+    }
+    #sectionScanea img{
+        width: 97%;
+    }
+    /*--------------RESPONSIVE----GANASTE------*/
+    #premio{
+        text-align: center;
+    }
+    #premio img{
+        width: 95%;
+    }
+    .bonus{
+        
     }
 }

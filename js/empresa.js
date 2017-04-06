@@ -32,7 +32,6 @@ function htmlImagenes (){
         {"imagen":'img/ceviche.jpg',"Text":"Ceviche al macho", "input":'radio',"name":"informacion" },      
         {"imagen":'img/ceviche.jpg',"Text":"Ceviche al macho", "input":'radio',"name":"informacion" },         {"imagen":'img/ceviche.jpg',"Text":"Ceviche al macho","input":'radio', "name":"informacion"}, 
         
-        
         { "imagen":'img/ceviche.jpg',"Text":"Ceviche al macho", "input":'radio',"name":"informacion" },      
         { "imagen":'img/ceviche.jpg', "Text":"Ceviche al macho", "input":'radio',"name":"informacion" }      
     ];
