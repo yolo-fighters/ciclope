@@ -7,7 +7,6 @@ function init(){
 
 //FUNCION PARA LISTA DE COSAS GRATIS
 function htmlImagenes (){
-    console.log('loca..!');
     var listaImg=[
         { "imagen":'img/ceviche.jpg', "Text":"Ceviche al macho", "mes":"Marzo"},      
         { "imagen":'img/ceviche.jpg', "Text":"Ceviche al macho", "mes":""},      
@@ -33,8 +32,33 @@ function secInicio(){
     $('#jugadores').show();
     $('#sectionScanea').hide();
 }
-//FUNCION PARA EL CALENDARIO
+//FUNCION PARA GENERAR CALENDARIO
 $(function(){
     $("#datepicker").datepicker();
     $("#datepicker2").datepicker();
 });
+//FUNCTION PARA CAMBIAR DE FECHA
+function cambioFecha(){
+   $(".col-xs-2").html("");
+   $("#fechaMes").html("");
+    
+    var meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto", "Septiembre","Octubre","Nobienbre","Diciembre"];
+    
+    var tiempo= $('#datepicker').val();
+    var listaDatos=tiempo.split("/");
+    
+    var tmpDate = new Date(listaDatos[2], listaDatos[0]-1, listaDatos[1]);
+    var mes = tmpDate.getMonth();
+    var dia = tmpDate.getDate();
+    var year = tmpDate.getFullYear();
+    var html = '<h2>'+year+'</h2>';
+    var html2='<span>'+meses[mes]+'</span>'
+    $(".col-xs-2").append(html);
+    $("#fechaMes").append(html2);    
+}
+
+
+
+
+
+
