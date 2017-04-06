@@ -56,8 +56,20 @@ function cambioFecha(){
     $(".col-xs-2").append(html);
     $("#fechaMes").append(html2);    
 }
-
-
+var app = angular.module("Myapp",[]);
+app.controller("ControladorCodigo",function($scope, $http){
+    $scope.getCodigo=function(){
+     $http.get('http://192.168.0.126:3000/api/todasEmpresas').then(function(info)
+        { 
+         for ()
+            $scope.test = info.data.result[0].codigo;
+         
+         console.log($scope.test = info.data.result[0].codigo);
+            $scope.$apply;
+        });
+        $scope.test='PRUEVA';
+    };
+});
 
 
 

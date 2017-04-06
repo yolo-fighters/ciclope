@@ -95,7 +95,8 @@
    </section>
    
    <!-------SECION---ESCANEA--TU--CODIGO------------------------>
-   <section id="sectionScanea">
+   <div ng-app="Myapp" ng-controller="ControladorCodigo">
+       <section id="sectionScanea">
        <div class="container">
            <h2>Scaneo</h2>
            <img src="img/escaneo.PNG" alt="" class="img-responsive">
@@ -105,13 +106,13 @@
                <div>
                    escribre el codigo que aprece ebajo de la imagen 
                    <br>
-                   <input type="text" id="codigo"> 
-                   <button>ENVIAR</button>
+                   <input type="text" ng-model="test"> 
+                   <button ng-click="getCodigo()">ENVIAR</button>
                </div>
            </div>
-           
        </div>
    </section>
+   </div>
     <!-------SECION---FELIZIDADES-GANASTE--PREMIO----------------->
     <section id="premio">
         <div class="container">
@@ -136,6 +137,7 @@
     </section>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="js/empresa.js"></script>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
