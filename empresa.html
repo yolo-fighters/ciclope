@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/empresa.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css">
 </head>
 <body>
    <!------HEADER-------MENU-------->
@@ -64,7 +65,7 @@
                        
                     </div>
                     <div class="col-xs-6">                       
-                        Fin <input type="text" name="datepicker" id="datepicker" readonly="readonly" size="12" /> <span class="fa fa-calendar">
+                        Fin <input type="text" name="datepicker" id="datepicker2" readonly="readonly" size="12"/> <span class="fa fa-calendar">
                     </div>
                     <div class="tabalaEstadistica">
                         <img src="img/estadistica.gif" alt="" class="img-responsive">
@@ -105,10 +106,34 @@
            
        </div>
    </section>
+    <!-------SECION---FELIZIDADES-GANASTE--PREMIO----------------->
+    <section id="premio">
+        <div class="container">
+            <h1>Felicidades , <span>Juan Carlos</span>obtiene</h1>
+            <img src="img/ceviche.jpg" alt="">
+            <div class="col-xs-4">
+                <img src="img/bonus.jpg" alt="">
+            </div>
+            <div class="col-xs-8">
+                <h3>5% <span>Toda la tienda llena</span></h3>
+            </div>
+            <i class="fa fa-angle-left" aria-hidden="true"></i>Regresar a Scan
+        </div>
+    </section>
+    <!-------------SECTION----NO------GANASTE---------------->
+    <section>
+        <div class="container">
+            <h2>Lo sentimos, Este Ticket ya fue usado</h2>
+            <img src="img/perdiste.jpg" alt="">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>Regresar a Scan
+        </div>
+    </section>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="js/empresa.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
 </html>
 
 
