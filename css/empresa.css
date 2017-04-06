@@ -8,35 +8,95 @@ section{
 .visible{
     display:block;
 }
-
-/*-------------------estilos---header menu-------*/
+img{
+    width:100%;
+}
+/*-------------------estilos---header-----------menu-------*/
 .navbar-default .navbar-nav li a{
     color: white;
+    padding: 30px;
 }
 .navbar-default{
     background: #1a1919;
 }
-input{
+.navbar-default input{
     margin:30px;
 }
-/*-------------------estilos---primera secion-------*/
+/*-------------------ESTILOS--------SECCION------CLIENENTES--------*/
+.border{
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    margin-top: 10%;
+}
 .img-responsive{
-    height: 250px;
+    width:100%;
+    height:200px;
 }
 .img-circle{
     width: 40%;
     margin: auto;
-    padding: 20px;
-    border: 1px solid #000000;
-}
-img{
-    width:100%;
-}
-/*-------------------estilos---segunda--secion--------*/
-#sectionScanea img {
-    width:30%;
+    padding: 14%;
+    border: 2px solid #000000;
+    text-align: center;
 }
 
+/*-----------------SECTION--DE----COSAS---GRATIS--------*/
+.letra{
+    font-size: 30px;
+    font-weight: bold;
+}
+.col-md-2 input{
+    margin:0;
+    width:10%;
+    
+}
+.col-md-2 p{
+    font-size:15px;
+    font-weight: bold;
+}
+/*--------------------ESTILOS DE LA SECTION ESCANEO---------*/
+#sectionScanea img {
+    width:40%;
+    height: 300px;
+}
+#sectionScanea {
+    font-weight: bold;
+}
+.numero{
+    width:40%;
+    height: 50px;
+    text-align:center;
+}
+
+/*-------SECION---FELIZIDADES-GANASTE--PREMIO-----------------*/
+#premio img{
+    width:30%;
+}
+#premio h3{
+    float:left;
+}
+.flecha{
+   font-size:30px; 
+}
+/*-------SECTION----NO------GANASTE-----------------*/
+#perdiste{
+    text-align:center;
+}
+#perdiste img {
+    width:30%;
+    height: auto;
+}
+.regreso{
+    font-size:20px;
+} 
+.regreso .flecha{
+    margin-top:30px ;
+}
+.regreso i{
+    font-size: 40px;
+    font-weight:bolder;
+}
+/*-------ESTILOS DE INPUT DE INFORMACION-----------------*/
 /*----------------------MEDIA--QUERIES------------*/
 @media (max-width:764px) and (min-width:319px){
     #sectionScanea{
@@ -44,5 +104,8 @@ img{
     }
     #sectionScanea img{
         width:100%;
+    }
+    .navbar-default input{
+        display: none;
     }
 }

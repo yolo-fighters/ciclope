@@ -3,34 +3,46 @@ function init(){
     htmlImagenes();
     $('#escanea').click(escanear);
     $('#inicio').click(secInicio);
-}
-
-//FUNCION PARA LISTA DE COSAS GRATIS
-function htmlImagenes (){
-    var listaImg=[
-        { "imagen":'img/ceviche.jpg', "Text":"Ceviche al macho", "mes":"Marzo"},      
-        { "imagen":'img/ceviche.jpg', "Text":"Ceviche al macho", "mes":""},      
-        { "imagen":'img/ceviche.jpg', "Text":"Ceviche al macho", "mes":""},      
-        { "imagen":'img/ceviche.jpg', "Text":"Ceviche al macho", "mes":"Junio"},      
-        { "imagen":'img/ceviche.jpg', "Text":"Ceviche al macho", "mes":""}      
-    ];
-    var carga= '';
-    for(var i in listaImg){
-        var html='<div class="col-md-2"><img src="'+listaImg[i].imagen+'" alt="">'+
-            '<p>'+listaImg[i].Text+'</p></div>'
-        carga+=html;
-    }
-    $('#lista').html(carga);
-}
+    $('.flecha').click(regresoEscaneo);
+};
 //FUNCIONES PARA NAVEGAR SECIONES
 function escanear(){
     $('#jugadores').hide();
     $('#sectionScanea').show();
+    $('#premio').hide();
+    $('#perdiste').hide();
 }
 
 function secInicio(){
     $('#jugadores').show();
     $('#sectionScanea').hide();
+    $('#premio').hide();
+    $('#perdiste').hide();
+}
+function regresoEscaneo(){
+    $('#sectionScanea').show();
+    $('#premio').hide();
+    $('#perdiste').hide();
+}
+
+//FUNCION PARA LISTA DE COSAS GRATIS
+var listaImg;
+function htmlImagenes (){
+    listaImg=[
+        {"imagen":'img/ceviche.jpg',"Text":"Ceviche al macho", "input":'radio',"name":"informacion" },      
+        {"imagen":'img/ceviche.jpg',"Text":"Ceviche al macho", "input":'radio',"name":"informacion" },         {"imagen":'img/ceviche.jpg',"Text":"Ceviche al macho","input":'radio', "name":"informacion"}, 
+        
+        
+        { "imagen":'img/ceviche.jpg',"Text":"Ceviche al macho", "input":'radio',"name":"informacion" },      
+        { "imagen":'img/ceviche.jpg', "Text":"Ceviche al macho", "input":'radio',"name":"informacion" }      
+    ];
+    var carga= '';
+    for(var i in listaImg){
+        var html='<div class="col-md-2"><img src="'+listaImg[i].imagen+'" alt="">'+
+            '<p>'+listaImg[i].Text+'</p> <br><input type="'+listaImg[i].input+'"></div>'
+        carga+=html;
+    }
+    $('#lista').html(carga);
 }
 //FUNCION PARA GENERAR CALENDARIO
 $(function(){
@@ -59,22 +71,31 @@ function cambioFecha(){
 }
 
 //FUNCION PARA INGRESAR EL CODIGO DE LA EMPRESA
-
 var app = angular.module("Myapp", []);
 app.controller("ControladorCodigo",function($scope, $http){
-    $scope.getCodigo=function(){
-    $http.get('http://192.168.0.126:3000/api/todasEmpresas').then(function(response){
-        for(var i in response.data.result){
-            var resultado =response.data.result[i].codigo;
-            console.log(resultado);
-        }
-        var test=$scope.test;
-        if(test==resultado){
-            alert('hola...!!!');
-        }else{
-            alert('noo...!!');
-        }
+    $scope.domain = "http://192.168.0.132:3000";
+    //$scope.show =1;    
+    $scope.checkCodigo = function(){
+        var url = $scope.domain + '/api/checkPremio/' + $scope.codigo;
+        $http.get(url).then(function(response){
+            var data = response.data;
+            if (data.status == "ok") {
+                $('#sectionScanea').hide();
+               $('#premio').show();
+            }else{
+                $('#sectionScanea').hide();
+                $('#perdiste').show();
+            };
       });
     };
 });
 
+app.controller("ControllerClientesYpuntos",function ($scope, $http){
+    $scope.contarClientes = function (){
+        $http.get('http://192.168.0.126:3000/api/todosConcursos').then(function(responseve){
+            console.log(responseve); 
+            var datos =responseve.data;
+            console.log(datos);
+        });
+    };
+});
