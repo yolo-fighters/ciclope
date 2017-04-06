@@ -6,14 +6,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ciclope</title>
     <link rel="icon" type="image/ico" href="">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+
+<body ng-app="myApp" ng-controller="myController">
+    <div class="fondo">
+    <header>
+        <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="img/logo.PNG" alt="" width="200px;"></a>
+                </div>
+                <div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li><a href="participante.html" id="a-inicio">INICIO</a></li>
+                            <li><a id="a-results">RESULTADOS</a></li>
+                            <li><a id="a-contact">CONTACTO</a></li>
+                        </ul>
+                        <ul class="cuenta">
+                            <li><a href="">Inicia Sesión</a></li>
+                            <li><a href="">Crea tu cuenta</a></li>
+                            <li><a href="" class="icono"><i class="icon-trophy2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        </div>
+    </header>
+    
+    <section id="inicio">
+        <div class="container">
+            <ul class="list-type">
+                <li><i class="icon-hand-peace-o"></i>Todo</li><li><i class="icon-spoon-knife"></i>Comida</li><li><i class="icon-bed"></i>Hospedaje</li><li><i class="icon-hand-paper-o"></i>Cosas</li>
+            </ul>
+        </div>
+    </section> 
+    
+    <section id="signup">
+        <div class="container">
+            <div class="contenedor">
+                <h1 class="text-center">Inicia Sesión</h1>
+                <button class="btn btn-face"><img src="img/face-logo.jpg" alt="" width="30px;">Iniciar sesión con Facebook</button>
+                <button class="btn btn-gmail" ng-click="onGoogleLogin()" value="Login"><img src="img/google-logo.jpg" alt="" width="30px;" >Iniciar sesión con Google</button>
+                <hr>
+                <span>ó</span>
+                <input type="text" class="form-control" placeholder="Correo Electrónico" id="email">
+                <input type="text" class="form-control" placeholder="Contraseña" id="password">
+                <button class="btn btn-init">INICIA SESIÓN</button>
+                
+                <h4>{{gmail.username}}</h4>
+                <h4>{{gmail.email}}</h4>
+                <img ng-src="{{g_image}}" style="width:100px; height:100px;" src="" alt="">
+                
+                <!--
+                <input type="button" ng-click="onGoogleLogin()" value="Login" style="width:100px; height:60px;">
+                <h4>{{gmail.username}}</h4>
+                <h4>{{gmail.email}}</h4>
+                <img ng-src="{{g_image}}" style="width:100px; height:100px;" src="" alt="">
+
+                <h1>Facebook Login</h1>
+                <input type="button" ng-click="onFBLogin()" value="Login" style="width:100px; height:60px;">
+                <h4>{{facebook.username}}</h4>
+                <h4>{{facebook.email}}</h4>
+                <img ng-src="{{fb_image}}" style="width:100px; height:100px;" src="" alt="">-->
+            </div>
+        </div>
+    </section>
+    
+    </div>
     
     
-    <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript">
+        (function() {
+            var p = document.createElement("script");
+            p.type = 'text/javascript';
+            p.async = true;
+            p.src = "https://apis.google.com/js/client.js?onload=onLoadFunction";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(p, s);
+        })();
+    </script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="/angular-google-gapi/dist/angular-google-gapi.min.js"></script>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    
+    
 </body>
+
 </html>

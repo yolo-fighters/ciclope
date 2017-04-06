@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?v5ckoj');
-  src:  url('fonts/icomoon.eot?v5ckoj#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?v5ckoj') format('truetype'),
-    url('fonts/icomoon.woff?v5ckoj') format('woff'),
-    url('fonts/icomoon.svg?v5ckoj#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?429ws7');
+  src:  url('fonts/icomoon.eot?429ws7#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?429ws7') format('truetype'),
+    url('fonts/icomoon.woff?429ws7') format('woff'),
+    url('fonts/icomoon.svg?429ws7#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -33,6 +33,9 @@
 .icon-chevron-down:before {
   content: "\f078";
 }
+.icon-trophy:before {
+  content: "\f091";
+}
 .icon-bed:before {
   content: "\f236";
 }
@@ -54,8 +57,14 @@
 .icon-user-circle-o:before {
   content: "\f2be";
 }
+.icon-trophy-one:before {
+  content: "\e901";
+}
 .icon-bowling-pins:before {
   content: "\e900";
+}
+.icon-trophy2:before {
+  content: "\e99e";
 }
 .icon-spoon-knife:before {
   content: "\e9a3";

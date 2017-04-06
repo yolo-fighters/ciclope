@@ -1,0 +1,136 @@
+/* ------------------------------------------------------------------------ ESTILOS GENERALES ------------ */
+body {
+    font-family: "Lato";
+}
+
+$main-color: #c34143;
+$dark-color: #802b2c;
+$color-todo: #8f4791;
+$color-todo-dark: #69346a;
+$color-comida: #f9ce55;
+$color-comida-dark: #f2bd28;
+$color-hospedaje: #ea6d4e;
+$color-hospedaje-dark: #d95b3c;
+$color-cosa: #5cb5a1;
+$color-cosa-dark: #4d9b8a;
+
+/* -------------------------------------------------------------------------------- MENU FIJO ------------ */
+header {
+    background: #fff;
+    .navbar-inverse {
+        background: #fff;
+        padding: 15px 0px 58px 0px;
+        position: relative;
+    }
+    .navbar-header a {
+        padding: 0;
+        padding-top: 5px;
+    }
+    .navbar-nav {
+        margin-left: 15px;
+    }
+    .navbar-inverse .navbar-nav>li {
+        cursor: pointer;
+        padding: 12px 0;
+        line-height: 10px;
+        padding-top: 0;
+    }
+    .navbar-inverse .navbar-nav>li>a{
+        color: $main-color;
+        font-size: 18px;
+    }
+    .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+        color: $main-color;
+        font-weight: bold;
+        font-size: 19px;
+        text-decoration: underline;
+    }
+    .navbar {
+        margin-bottom: 0;
+        z-index: 900;
+    }
+    .cuenta {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        float: right;
+        li{
+            display: inline-block;
+            a{
+                padding: 10px;
+                color: $main-color;
+                font-weight: bold;
+                &:last-child {
+                    padding-right: 1px;
+                    i {
+                        font-size: 40px;
+                        color: $main-color;
+                        top: 10px;
+                        position: relative;
+                        
+                    }
+                }
+            }
+            
+        }
+        .icono {
+            text-decoration: none;
+            &:hover, &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+    .container-fluid {
+        padding-right: 0;
+    }
+}
+
+/* ------------------------------------------------------------------------------ MENU INICIO ------------ */
+#inicio {
+    .list-type {
+        position: relative;
+        top: -45px;
+        z-index: 1000;
+        color: #fff;
+        padding-left: 0;
+        margin-bottom: 0;
+        
+        li:nth-child(1){
+            background: $color-todo;
+            &:hover {
+                background:$color-todo-dark;
+            }
+        }
+        li:nth-child(2){
+            background: $color-comida;
+            &:hover {
+                background:$color-comida-dark;
+            }
+        }
+        li:nth-child(3){
+            background: $color-hospedaje;
+            &:hover {
+                background:$color-hospedaje-dark;
+            }
+        }
+        li:nth-child(4){
+            background: $color-cosa;
+            &:hover {
+                background:$color-cosa-dark;
+            }
+        }
+        li {
+            padding: 10px 0;
+            cursor: pointer;
+        }
+        i {
+            font-size: 20px;
+            padding-right: 10px;
+        }
+    }
+}
+#inicio .list-type li, .list-sorteo li {
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+}

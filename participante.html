@@ -119,8 +119,48 @@
             <input type="text" ng-model="test">
         </section>
     </div>
-    
-    
+
+<!-- ----------------------------------------------------------------------------------- PREMIOS ------------------>
+    <section id="premios">
+        <div class="container">
+            <h1>Premios</h1>
+            <ul class="list-premios">
+                <li ng-repeat="premio in premios">
+                    <img class="elemento" src="img/ceviche.jpg" alt="">
+                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
+                    <p class="nombre-elemento">GRATIS {{premio.nombre}}</p>
+                </li>
+            </ul>
+            <h1>Descuentos</h1>
+            <ul class="list-descuentos">
+                <li ng-repeat="descuento in descuentos">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p>{{premio.descuento}}</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="elemento" src="img/ceviche.jpg" class="img-responsive" alt="">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="img/purolimon.jpg" class="logo-empresa" class="img-responsive" alt="">
+                        </div>
+                    </div>
+                    <p>{{descuento.nombre}}</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+<!-- ----------------------------------------------------------------------------------- CANJEAR ------------------>
+    <section id="canjear">
+        <div class="container">
+            <h1>Canjea tu premio!</h1>
+            <div class="row">
+                <div class="col-md-4 col-xs-12"><img src="img/qr.png" alt=""><p>Muestra este QR al momento del canje y obtendrás el premio</p></div>
+                <div class="col-md-4 col-xs-12"><!-- el evento que se le hizo click, se deberia pasar todos los estilos? --></div>
+                <div class="col-md-4 col-xs-12"><div class="map" style="height:200px; width:100%;"></div><p>Direccion</p></div>
+            </div>
+        </div>
+    </section>
     
     
 <!-- --------------------------------------------------------------------------------- CONTACTOS ------------------>
