@@ -1,0 +1,77 @@
+/*------------------------------------------------------------------------- ESTILOS GENERALES ------------------ */
+body {
+  box-sizing: border-box; }
+
+/*--------------------------------------------------------------------------------- MENU FIJO ------------------ */
+header {
+  margin-bottom: 70px; }
+
+header .navbar-brand {
+  margin-top: 8px; }
+
+header .navbar-nav > li > a {
+  padding-top: 23px;
+  padding-bottom: 23px; }
+
+/*------------------------------------------------------------------------------- MENU INICIO ------------------ */
+#inicio .list-type, .list-sorteo {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0; }
+
+#inicio .list-type li, .list-sorteo li {
+  display: inline-block;
+  width: 25%;
+  text-align: center; }
+
+/*----------------------------------------------------------------------------- LISTA SORTEOS ------------------ */
+#sorteo .list-sorteo li {
+  width: 31%;
+  position: relative;
+  margin: 1%; }
+  #sorteo .list-sorteo li .elemento {
+    width: 100%; }
+  #sorteo .list-sorteo li .logo-empresa {
+    position: absolute;
+    color: #fff;
+    width: 100px;
+    top: 5px;
+    left: 5px; }
+  #sorteo .list-sorteo li .nombre-elemento {
+    position: absolute;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.51);
+    padding: 5px;
+    display: inline-block;
+    bottom: 0;
+    left: 0;
+    font-size: 18px; }
+  #sorteo .list-sorteo li .add-pto {
+    position: absolute;
+    color: #fff;
+    background: #c34143;
+    border-radius: 100%;
+    padding: 15px;
+    display: inline-block;
+    bottom: 0;
+    right: 10px;
+    line-height: 1;
+    font-size: 15px;
+    font-family: 'Glyphicons Halflings'; }
+
+/*-------------------------------------------------------------------------------- RESULTADOS ------------------ */
+.datepicker.dropdown-menu {
+  top: 122px !important; }
+
+#resultados {
+  padding: 15px 0; }
+  #resultados h1 {
+    display: inline-block;
+    margin: 0; }
+  #resultados .input-group .form-control {
+    height: 40px; }
+  #resultados .i-calendar {
+    font-size: 28px;
+    color: #c34143; }
+
+/*# sourceMappingURL=participante.css.map */
