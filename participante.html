@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ciclope</title>
     <link rel="icon" type="image/ico" href="">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/participante.css">
     <link rel="stylesheet" href="css/queries.css">
 </head>
@@ -16,6 +19,7 @@
 <body onload="init()" data-spy="scroll" data-target=".navbar" data-offset="50">
 <!-- --------------------------------------------------------------------------------- MENU FIJO ------------------>
     <header>
+        <div class="container">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -24,21 +28,27 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>                        
                     </button>
-                    <a class="navbar-brand" href="#">Ciclope</a>
+                    <a class="navbar-brand" href="#"><img src="img/logo.PNG" alt="" width="200px;"></a>
                 </div>
                 <div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a href="participante.html" id="a-inicio">Inicio</a></li>
-                            <li><a id="a-results">Resultados</a></li>
-                            <li><a id="a-contact">Contacto</a></li>
+                            <li><a href="participante.html" id="a-inicio">INICIO</a></li>
+                            <li><a id="a-results">RESULTADOS</a></li>
+                            <li><a id="a-contact">CONTACTO</a></li>
+                        </ul>
+                        <ul class="cuenta">
+                            <li><a href="">Inicia Sesión</a></li>
+                            <li><a href="">Crea tu cuenta</a></li>
+                            <li><a href="" class="icono"><i class="icon-trophy2"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </nav>  
+        </nav>
+        </div>
     </header>
-    
+
 <!-- ------------------------------------------------------------------------------- MENU INICIO ------------------>
     <section id="inicio">
         <div class="container">
@@ -46,18 +56,33 @@
                 <li><i class="icon-hand-peace-o"></i>Todo</li><li><i class="icon-spoon-knife"></i>Comida</li><li><i class="icon-bed"></i>Hospedaje</li><li><i class="icon-hand-paper-o"></i>Cosas</li>
             </ul>
         </div>
-    </section> 
+    </section>
    
 <!-- ----------------------------------------------------------------------------- LISTA SORTEOS ------------------>
 <div ng-controller="sorteoController">
     <section id="sorteo">
-        <div class="container">
+        <div class="container-fluid">
             <ul class="list-sorteo">
-                <li ng-repeat="plato in platos" ng-repeat="participante in participantes">
+                <li ng-repeat="plato in platos" >
                     <img class="elemento" src="img/ceviche.jpg" alt="">
                     <img src="img/purolimon.jpg" class="logo-empresa" alt="">
                     <p class="nombre-elemento">{{plato.nombre}}</p>
-                    <p class="glyphicon-plus add-pto" ng-click="plusOne($index)">{{participante.puntos}}</p>
+                    <p class="glyphicon-plus add-pto" ng-click="plusOne($index)">{{plato.puntos}}</p>
+                </li><li>
+                    <img class="elemento" src="img/capuchino.jpg" alt="">
+                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
+                    <p class="nombre-elemento">Capucchino</p>
+                    <p class="glyphicon-plus add-pto"></p>
+                </li><li>
+                    <img class="elemento" src="img/ceviche.jpg" alt="">
+                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
+                    <p class="nombre-elemento">Ceviche de pescado</p>
+                    <p class="glyphicon-plus add-pto"></p>
+                </li><li>
+                    <img class="elemento" src="img/picante.jpg" alt="">
+                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
+                    <p class="nombre-elemento">Picante de mariscos</p>
+                    <p class="glyphicon-plus add-pto"></p>
                 </li>
             </ul>
         </div>
@@ -121,37 +146,41 @@
     </div>
 
 <!-- ----------------------------------------------------------------------------------- PREMIOS ------------------>
-    <section id="premios">
+    <section id="premios" style="display:none;">
         <div class="container">
+            <div ng-controller="premioController">
             <h1>Premios</h1>
             <ul class="list-premios">
                 <li ng-repeat="premio in premios">
-                    <img class="elemento" src="img/ceviche.jpg" alt="">
-                    <img src="img/purolimon.jpg" class="logo-empresa" alt="">
-                    <p class="nombre-elemento">GRATIS {{premio.nombre}}</p>
+                    <img class="img-responsive elemento" ng-src="{{premio.url}}" alt="" height="220px;">
+                    <img ng-src="{{premio.urllogo}}" class="logo-empresa" alt="">
+                    <p class="nombre-elemento"><b>GRATIS</b> {{premio.concurso}}</p>
                 </li>
             </ul>
             <h1>Descuentos</h1>
             <ul class="list-descuentos">
+                <div class="container">
                 <li ng-repeat="descuento in descuentos">
                     <div class="row">
                         <div class="col-md-4">
-                            <p>{{premio.descuento}}</p>
+                            <p class="text-center dscto">{{descuento.descuento}}</p>
                         </div>
                         <div class="col-md-4">
-                            <img class="elemento" src="img/ceviche.jpg" class="img-responsive" alt="">
+                            <img class="img-responsive elemento" src="img/ceviche.jpg" class="img-responsive" alt="">
                         </div>
                         <div class="col-md-4">
-                            <img src="img/purolimon.jpg" class="logo-empresa" class="img-responsive" alt="">
+                            <img src="img/purolimon.jpg" class="img-responsive logo-empresa" alt="">
                         </div>
                     </div>
-                    <p>{{descuento.nombre}}</p>
+                    <p class="dscto-detalle text-center">{{descuento.nombre}}</p>
                 </li>
+                </div>
             </ul>
+            </div>
         </div>
     </section>
 <!-- ----------------------------------------------------------------------------------- CANJEAR ------------------>
-    <section id="canjear">
+    <section id="canjear" style="display:none;">
         <div class="container">
             <h1>Canjea tu premio!</h1>
             <div class="row">

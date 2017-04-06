@@ -29,7 +29,8 @@ header {
     text-decoration: underline; }
   header .navbar {
     margin-bottom: 0;
-    z-index: 900; }
+    z-index: 900;
+    border: none !important; }
   header .cuenta {
     margin: 0;
     padding: 0;
@@ -58,7 +59,7 @@ header {
 /* ------------------------------------------------------------------------------ MENU INICIO ------------ */
 #inicio .list-type {
   position: relative;
-  top: -45px;
+  top: -44px;
   z-index: 1000;
   color: #fff;
   padding-left: 0;

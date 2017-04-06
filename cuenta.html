@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/common.css">
 </head>
-
-<body onload="init()" ng-app="myApp" ng-controller="myController">
+<!-- -------------------------------------------------------------------------------- MENU FIJO ------------ -->
+<body onload="init()">
     <div class="fondo">
     <header>
         <div class="container">
@@ -47,6 +47,7 @@
         </div>
     </header>
     
+<!-- ------------------------------------------------------------------------------ MENU INICIO ------------ -->
     <section id="inicio">
         <div class="container">
             <ul class="list-type">
@@ -55,61 +56,24 @@
         </div>
     </section> 
 
-<!-- ------------------------------------------------------------------------------- BIENVENIDA ------------ -->
-    <section id="welcome">
-        <h1 class="text-center welcome">¡Bienvenido!</h1>
-        <button class="btn btn-in">Ingresar</button>
-    </section>
+
 <!-- ----------------------------------------------------------------------------------- SIGNUP ------------ -->
-    <section id="signup" style="display:none;">
+    <section id="signup">
         <div class="container">
             <div class="contenedor">
-                <h1 class="text-center">Inicia Sesión</h1>
-                <button class="btn btn-face"><img src="img/face-logo.jpg" alt="" width="30px;">Iniciar sesión con Facebook</button>
-                <button class="btn btn-gmail" ng-click="onGoogleLogin()" value="Login"><img src="img/google-logo.jpg" alt="" width="30px;" >Iniciar sesión con Google</button>
-                <hr>
-                <span>ó</span>
+                <h1 class="text-center">Registrarme</h1>
+                <input type="text" class="form-control" placeholder="Nombre" id="name">
+                <input type="text" class="form-control" placeholder="Apellidos" id="lastname">
                 <input type="text" class="form-control" placeholder="Correo Electrónico" id="email">
                 <input type="text" class="form-control" placeholder="Contraseña" id="password">
-                <button class="btn btn-init">INICIA SESIÓN</button>
-                
-                <h4>{{gmail.username}}</h4>
-                <h4>{{gmail.email}}</h4>
-                <img ng-src="{{g_image}}" style="width:100px; height:100px;" src="" alt="">
-                
-                <!--
-                <input type="button" ng-click="onGoogleLogin()" value="Login" style="width:100px; height:60px;">
-                <h4>{{gmail.username}}</h4>
-                <h4>{{gmail.email}}</h4>
-                <img ng-src="{{g_image}}" style="width:100px; height:100px;" src="" alt="">
-
-                <h1>Facebook Login</h1>
-                <input type="button" ng-click="onFBLogin()" value="Login" style="width:100px; height:60px;">
-                <h4>{{facebook.username}}</h4>
-                <h4>{{facebook.email}}</h4>
-                <img ng-src="{{fb_image}}" style="width:100px; height:100px;" src="" alt="">-->
+                <button class="btn btn-init">TERMINADO</button>
             </div>
         </div>
     </section>
-    
     </div>
-    
-    
-    <script src="js/app.js"></script>
-    <script type="text/javascript">
-        (function() {
-            var p = document.createElement("script");
-            p.type = 'text/javascript';
-            p.async = true;
-            p.src = "https://apis.google.com/js/client.js?onload=onLoadFunction";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(p, s);
-        })();
-    </script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <!--<script type="text/javascript" src="/angular-google-gapi/dist/angular-google-gapi.min.js"></script>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     

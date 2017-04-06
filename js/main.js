@@ -56,3 +56,12 @@ myApp.controller('myController', ['$scope', function($scope){
         });
     }
 }]);
+
+function init() {
+    $(".btn-in").click(getIniciar);
+}
+
+function getIniciar() {
+    $("#welcome").hide("fast");
+    $("#signup").fadeIn("slow");
+}

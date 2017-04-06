@@ -1,6 +1,5 @@
 /* ------------------------------------------------------------------------ ESTILOS GENERALES ------------ */
 body {
-  font-family: "Lato";
   background: url(../img/background.jpg) no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -8,100 +7,31 @@ body {
 
 .fondo {
   background: rgba(0, 0, 0, 0.57);
-  height: 100%; }
+  height: 100%;
+  min-height: 700px; }
 
-/* -------------------------------------------------------------------------------- MENU FIJO ------------ */
-header {
-  background: #fff; }
-  header .navbar-inverse {
-    background: #fff;
-    padding: 15px 0px 58px 0px;
-    position: relative; }
-  header .navbar-header a {
-    padding: 0;
-    padding-top: 5px; }
-  header .navbar-nav {
-    margin-left: 15px; }
-  header .navbar-inverse .navbar-nav > li {
-    cursor: pointer;
-    padding: 12px 0;
-    line-height: 10px;
-    padding-top: 0; }
-  header .navbar-inverse .navbar-nav > li > a {
-    color: #c34143;
-    font-size: 18px; }
-  header .navbar-inverse .navbar-nav > li > a:focus, header .navbar-inverse .navbar-nav > li > a:hover {
-    color: #c34143;
-    font-weight: bold;
-    font-size: 19px;
-    text-decoration: underline; }
-  header .navbar {
-    margin-bottom: 0;
-    z-index: 900; }
-  header .cuenta {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    float: right; }
-    header .cuenta li {
-      display: inline-block; }
-      header .cuenta li a {
-        padding: 10px;
-        color: #c34143;
-        font-weight: bold; }
-        header .cuenta li a:last-child {
-          padding-right: 1px; }
-          header .cuenta li a:last-child i {
-            font-size: 40px;
-            color: #c34143;
-            top: 10px;
-            position: relative; }
-    header .cuenta .icono {
-      text-decoration: none; }
-      header .cuenta .icono:hover, header .cuenta .icono:focus {
-        text-decoration: none; }
-  header .container-fluid {
-    padding-right: 0; }
-
-/* ------------------------------------------------------------------------------ MENU INICIO ------------ */
-#inicio .list-type {
-  position: relative;
-  top: -45px;
-  z-index: 1000;
+/* ------------------------------------------------------------------------------- BIENVENIDA ------------ */
+.welcome {
+  margin: 0;
+  padding: 100px 0;
   color: #fff;
-  padding-left: 0;
-  margin-bottom: 0; }
-  #inicio .list-type li:nth-child(1) {
-    background: #8f4791; }
-    #inicio .list-type li:nth-child(1):hover {
-      background: #69346a; }
-  #inicio .list-type li:nth-child(2) {
-    background: #f9ce55; }
-    #inicio .list-type li:nth-child(2):hover {
-      background: #f2bd28; }
-  #inicio .list-type li:nth-child(3) {
-    background: #ea6d4e; }
-    #inicio .list-type li:nth-child(3):hover {
-      background: #d95b3c; }
-  #inicio .list-type li:nth-child(4) {
-    background: #5cb5a1; }
-    #inicio .list-type li:nth-child(4):hover {
-      background: #4d9b8a; }
-  #inicio .list-type li {
-    padding: 10px 0;
-    cursor: pointer; }
-  #inicio .list-type i {
-    font-size: 20px;
-    padding-right: 10px; }
+  font-size: 40px; }
 
-#inicio .list-type li, .list-sorteo li {
-  display: inline-block;
-  width: 25%;
-  text-align: center; }
+.btn-in {
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  font-size: 45px;
+  color: #fff;
+  background: rgba(195, 65, 67, 0.78);
+  margin: 0 auto;
+  display: block;
+  border-radius: 100%; }
 
 /* ----------------------------------------------------------------------------------- SIGNUP ------------ */
 #signup {
-  margin-top: 20px; }
+  margin-top: 20px;
+  margin-bottom: 50px; }
   #signup .contenedor {
     width: 50%;
     margin: 0 auto;

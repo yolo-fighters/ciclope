@@ -3,6 +3,8 @@ function init() {
     
     //$("#btn-a").click(onButtonClick);
     $("#datepicker").change(onDateChange);
+    $(".add-pto").click(addPoints);
+    $(".icon-trophy2").click(showPremios);
 }
 
 function onResultsClick() {
@@ -11,7 +13,14 @@ function onResultsClick() {
     $("#resultados").show();
 }
 
+function showPremios() {
+    $("#sorteo").hide();
+    $("#premios").show();
+}
 
+function addPoints() {
+    console.log("addpoint");
+}
 /*
 function onButtonClick(){
     console.log("si");
@@ -65,20 +74,22 @@ app.controller("MainController", function($scope, $http) {
     
 });
 
+
+
 app.controller("sorteoController", function($scope, $http) {
     $scope.platos=[];
+    $scope.domain = "http://192.168.0.132:3000";      
     $scope.showName = function(){
-        $http.get('http://192.168.0.126:3000/api/todosConcursos').then(function(response) {
+        var url = $scope.domain + '/api/todosConcursos/user/usr01';
+        $http.get(url).then(function(response) {
+            console.log(response);
             for (var index = 0; index < response.data.result.length; index++) {
                 $scope.platos.push(response.data.result[index]);
                 $scope.$apply;
             }
-            //$scope.nameDish = response.data.result[0].nombre;
-            //$scope.$apply;
         });
     };    
     
-    //$scope.nameDish = "Prueba";
     $scope.showName();
     
     $scope.participantes = [
@@ -106,9 +117,66 @@ app.controller("sorteoController", function($scope, $http) {
     };
 });
 
+//$(".add-pto").click
+/* -------------------------------------------------------------------------------------- PREMIOS ------- */
 
-
-
-
+app.controller('premioController',['$scope',function($scope){
+  $scope.premios = [
+    {
+      empresa: 'Casa Andina',
+      concurso: "Dos noches todo pagado",
+      winner: "fabiola",
+      tipo: 'todo',
+      codigo: "ceviche",
+      detalle: "Un ceviche de pescado gratuito",
+      canjeado: true,
+      urllogo: 'img/casa.gif',
+        url: 'img/hotel1.jpg'
+    },
+      {
+      empresa: 'Marriot',
+      concurso: "Una noche para una pareja",
+      winner: "fabiola",
+      tipo: 'todo',
+      codigo: "ceviche",
+      detalle: "Dos noches en una habitacion",
+      canjeado: true,
+        urllogo: 'img/marriott.png',
+          url: 'img/hotel2.jpg'
+    },
+    {
+      empresa: 'Sheraton',
+      concurso: "Una noche y desayuno",
+      winner: "fabiola",
+      tipo: 'todo',
+      codigo: "ceviche",
+      detalle: "habitacion simple",
+      canjeado: true,
+      urllogo: 'img/sheraton.png',
+        url: 'img/hotel3.jpg'
+    }
+  ];
+    
+    $scope.descuentos = [
+    {
+        nombre: "Descuento del 10% en bebidas",
+        descuento: "10%",
+        urlEmpresa: "img/",
+        urlElemento: "img/"
+    },
+    {
+        nombre: "Descuento del 15% en comidas",
+        descuento: "15%",
+        urlEmpresa: "img/",
+        urlElemento: "img/"
+    },
+    {
+        nombre: "Descuento del 40% por dos personas",
+        descuento: "40%",
+        urlEmpresa: "img/",
+        urlElemento: "img/"
+    }
+  ];
+}]);
 
 
